@@ -1,0 +1,15 @@
+Package: goodpress
+Title: Provides Output Format and Utilities to Write Posts on Wordpress
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Maëlle",
+           family = "Salmon",
+           role = c("cre", "aut"),
+           email = "maelle.salmon@yahoo.se",
+           comment = c(ORCID = "0000-0002-2815-0399"))
+Description: Helps you write from R Markdown to Wordpress directly.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2
