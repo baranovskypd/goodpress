@@ -14,11 +14,11 @@ proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https:
 <!-- badges: end -->
 
 The goal of goodpress is to post to Wordpress from R Markdown. This is
-mostly a prototype since I don’t use Wordpress myself: therefore
-goodpress is up for adoption\!
+mostly a prototype since I don’t use Wordpress myself.
 
 **Important disclaimer**: I don’t use Wordpress, so I am not sure you
-should trust me.
+should trust me. You are welcome to volunteer to take over this
+package/concept.
 
 ## Installation
 
@@ -41,15 +41,24 @@ You cannot install plugins if you use wordpress.com (unless you have a
 costly business plan there), therefore with wordpress.com you cannot use
 the REST API. There are services out there providing a domain name,
 hosting and a one-click Wordpress install, that you could use if you
-don’t roll your own server. ADD STEPS I FOLLOWED.
+don’t roll your own server.
 
-## Example
+  - Installed and activated the Application Passwords plugin.
+  - Created a new user with editor rights, not admin, and created an
+    application password for “rmarkdown”.
+  - In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`.
+  - Edited the [.htaccess file of my
+    website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
 
-This is a basic example which shows you how to solve a common problem:
+## Workflow
 
-``` r
-## basic example code
-```
+  - Create your posts in folders, one folder per post, with index.Rmd
+    knitted to index.md and figures under figures.
+  - The post should use the template provided in this package. It is
+    rendered to Markdown.
+  - Run the function `wp_post()` that takes the path as argument and
+    upload everything. It will also add a file indicating the post ID in
+    the website.
 
 ## Motivation
 

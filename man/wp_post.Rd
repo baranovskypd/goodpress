@@ -2,32 +2,27 @@
 % Please edit documentation in R/post.R
 \name{wp_post}
 \alias{wp_post}
-\title{Post a post}
+\title{Post a post to Wordpress}
 \usage{
-wp_post(post, wordpress_url)
+wp_post(post_folder, wordpress_url)
 }
 \arguments{
-\item{post}{(JSON)}
+\item{post_folder}{Path to folder where the post (index.Rmd, index.md, media)
+lives}
 
-\item{wordpress_url}{}
+\item{wordpress_url}{URL to your website}
 }
 \value{
-URL to the post
+URL to the post (invisibly)
 }
 \description{
-Post a post
+Post a post to Wordpress
 }
 \examples{
-  post <- jsonlite::toJSON(
-  list( 'date' = '2017-06-19T20:00:35',
-        'title' = 'First REST API post',
-        'slug' = 'rest-api-1',
-        'status' = 'publish',
-        'content' = 'this is the <a href="https://masalmon.eu">content</a>',
-        'excerpt' = 'Exceptional post!',
-        'format' = 'standard'),
-  auto_unbox = TRUE
-  )
- wordpress_url <- "https://rmd-wordpress.eu"
-  wp_post(post, wordpress_url)
+\dontrun{
+# this requires authentication!
+post_folder <- system.file(file.path("post-example", "index.md"), package = "goodpress")
+wordpress_url <- "https://rmd-wordpress.eu" # replace with your own (test) website
+wp_post(post_folder, wordpress_url)
+}
 }

@@ -1,26 +1,37 @@
-#' Post a post
+#' Post a post to Wordpress
 #'
-#' @param post (JSON)
-#' @param wordpress_url
+#' @param post_folder Path to folder where the post (index.Rmd, index.md, media)
+#' lives
+#' @param wordpress_url URL to your website
 #'
-#' @return URL to the post
+#' @return URL to the post (invisibly)
 #' @export
 #'
 #' @examples
-#'   post <- jsonlite::toJSON(
-#'   list( 'date' = '2017-06-19T20:00:35',
-#'         'title' = 'First REST API post',
-#'         'slug' = 'rest-api-1',
-#'         'status' = 'publish',
-#'         'content' = 'this is the <a href="https://masalmon.eu">content</a>',
-#'         'excerpt' = 'Exceptional post!',
-#'         'format' = 'standard'),
-#'   auto_unbox = TRUE
-#'   )
-#'  wordpress_url <- "https://rmd-wordpress.eu"
-#'   wp_post(post, wordpress_url)
-wp_post <- function(post, wordpress_url) {
+#' \dontrun{
+#' # this requires authentication!
+#' post_folder <- system.file(file.path("post-example", "index.md"), package = "goodpress")
+#' wordpress_url <- "https://rmd-wordpress.eu" # replace with your own (test) website
+#' wp_post(post_folder, wordpress_url)
+#' }
+wp_post <- function(post_folder, wordpress_url) {
 
+   body <- commonmark::markdown_html(
+     glue::glue_collapse(blogdown:::split_yaml_body(readLines(path))$body,
+                         sep = "\n"),
+     extensions = TRUE)
+
+   meta <- rmarkdown::yaml_front_matter(path)
+     post <- jsonlite::toJSON(
+     list( 'date' = meta$date,
+           'title' = meta$title,
+           'slug' = meta$slug,
+           'status' = 'publish',
+           'content' = body,
+           'excerpt' = meta$excerpt,
+           'format' = 'standard'),
+     auto_unbox = TRUE
+     )
   token <- paste("Basic",
                  jsonlite::base64_enc(
     glue::glue(
@@ -44,3 +55,7 @@ wp_post <- function(post, wordpress_url) {
   invisible(post_url)
 
 }
+
+
+
+

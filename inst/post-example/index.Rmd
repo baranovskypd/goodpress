@@ -1,0 +1,26 @@
+---
+title: "Title of the Post"
+author: "An R Enthusiast"
+date: "2020-04-01T00:00:00"
+slug: "post-slug"
+excerpt: "Here I summarize this fantastic post"
+output: 
+  md_document:
+    preserve_yaml: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+goodpress::set_hooks()
+```
+
+## Nice subsection
+
+[A link](https://masalmon.eu)
+
+```{r eval=FALSE}
+usethis::use_git()
+ggplot(mtcars)
+plot(1:19)
+a <- TRUE
+```

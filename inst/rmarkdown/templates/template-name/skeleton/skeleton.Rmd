@@ -1,0 +1,22 @@
+---
+title: "Template Title"
+author: "Your Name"
+date: "The Date"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+goodpress::set_hooks()
+```
+
+## Nice subsection
+
+[A link](https://masalmon.eu)
+
+```{r eval=FALSE}
+usethis::use_git()
+ggplot(mtcars)
+plot(1:19)
+a <- TRUE
+```
