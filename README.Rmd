@@ -42,7 +42,10 @@ At the moment, for the sake of simplicity, this package only relies on Applicati
 
 You cannot install plugins if you use wordpress.com (unless you have a costly business plan there), therefore with wordpress.com you cannot use the REST API.
 There are services out there providing a domain name, hosting and a one-click Wordpress install, that you could use if you don't roll your own server.
-ADD STEPS I FOLLOWED.
+
+* Installed and activated the Application Passwords plugin.
+* Created a new user with editor rights, not admin, and created an application password for "rmarkdown".
+* Edited the [.htaccess file of my website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
 
 ## Example
 
