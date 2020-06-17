@@ -57,7 +57,7 @@ Here's what I did to be able to use this package on my [test website](https://rm
 
 ## Workflow
 
-Partly aspirational for now.
+Partly aspirational for now (what works at the moment is in `?wp_post`).
 
 * Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under figures.
 * The post should use the template provided in this package. It is rendered to Markdown. _TODO: Make this an actual usable template, or maybe even an output format à la hugodown._

@@ -60,7 +60,7 @@ website](https://rmd-wordpress.eu/):
 
 ## Workflow
 
-Partly aspirational for now.
+Partly aspirational for now (what works at the moment is in `?wp_post`).
 
   - Create your posts in folders, one folder per post, with index.Rmd
     knitted to index.md and figures under figures.
