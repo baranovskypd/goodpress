@@ -63,12 +63,15 @@ website](https://rmd-wordpress.eu/):
 Partly aspirational for now (what works at the moment is in `?wp_post`).
 
   - Create your posts in folders, one folder per post, with index.Rmd
-    knitted to index.md and figures under figures.
+    knitted to index.md and figures under a figures folder (so they can
+    be different from non R related media).
   - The post should use the template provided in this package. It is
     rendered to Markdown. *TODO: Make this an actual usable template, or
     maybe even an output format à la hugodown.*
   - Run the function `wp_post()` that takes the path as argument and
     (*TODO*) uploads media.
+
+The “one post per folder” thing is inspired by Hugo leaf bundles.
 
 ## Motivation
 
