@@ -14,11 +14,13 @@ proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https:
 <!-- badges: end -->
 
 The goal of goodpress is to post to Wordpress from R Markdown. This is
-mostly a prototype since I don’t use Wordpress myself.
+mostly a prototype since I don’t use Wordpress myself. I need the
+prototype for a course. :smile\_cat:
 
 **Important disclaimer**: I don’t use Wordpress, so I am not sure you
 should trust me. You are welcome to volunteer to take over this
-package/concept.
+package/concept, but please tell me about it so I can add a link to your
+package.
 
 ## Installation
 
@@ -35,30 +37,38 @@ From Wordpress point-of-view this package is a “remote application”
 therefore it needs your website to use an [authentication
 *plugin*](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#authentication-plugins).
 At the moment, for the sake of simplicity, this package only relies on
-Application Passwords.
+[Application
+Passwords](https://wordpress.org/plugins/application-passwords/).
 
 You cannot install plugins if you use wordpress.com (unless you have a
 costly business plan there), therefore with wordpress.com you cannot use
-the REST API. There are services out there providing a domain name,
-hosting and a one-click Wordpress install, that you could use if you
-don’t roll your own server.
+the REST API. There are paid services out there providing a domain name,
+hosting and a one-click Wordpress install, for a few dollars a month,
+that you could use if you don’t roll your own server.
 
-  - Installed and activated the Application Passwords plugin.
-  - Created a new user with editor rights, not admin, and created an
-    application password for “rmarkdown”.
+Here’s what I did to be able to use this package on my [test
+website](https://rmd-wordpress.eu/):
+
+  - Installed and activated the [Application Passwords
+    plugin](https://wordpress.org/plugins/application-passwords/).
+  - Created a new user with editor rights, not admin, and from the admin
+    panel I created an application password for “rmarkdown” for that
+    user.
   - In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`.
   - Edited the [.htaccess file of my
     website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
 
 ## Workflow
 
+Partly aspirational for now.
+
   - Create your posts in folders, one folder per post, with index.Rmd
     knitted to index.md and figures under figures.
   - The post should use the template provided in this package. It is
-    rendered to Markdown.
+    rendered to Markdown. *TODO: Make this an actual usable template, or
+    maybe even an output format à la hugodown.*
   - Run the function `wp_post()` that takes the path as argument and
-    upload everything. It will also add a file indicating the post ID in
-    the website.
+    (*TODO*) uploads media.
 
 ## Motivation
 
@@ -77,8 +87,8 @@ a Wordpress blog](https://github.com/mAAdhaTTah/wordpress-github-sync/)
 [its source](https://github.com/ThinkR-open/abcdR)) but it doesn’t
 handle media. If you use a GitHub repo:
 
-  - You could set up a GitHub action that’d interact with Wordpress REST
-    API each time you push to the default branch.
+  - You could set up something like a GitHub Action that’d interact with
+    Wordpress REST API each time you push to the default branch.
   - Are you still sure you don’t want to use a [static website generator
     instead](https://gohugo.io/tools/migrations/)? :wink: More
     seriously, I am interested in blogging workflows so feel free to
