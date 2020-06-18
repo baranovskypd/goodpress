@@ -1,6 +1,5 @@
 ---
 title: "Title of the Post"
-author: "An R Enthusiast"
 date: "2020-04-01T00:00:00"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"

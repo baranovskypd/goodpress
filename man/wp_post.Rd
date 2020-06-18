@@ -21,8 +21,12 @@ Post a post to Wordpress
 \examples{
 \dontrun{
 # this requires authentication!
-post_folder <- system.file(file.path("post-example", "index.md"), package = "goodpress")
+post_folder <- system.file(file.path("post-example"), package = "goodpress")
+tmp_post_folder <- file.path(tempdir(), "post")
+dir.create(tmp_post_folder)
+file.copy(dir(post_folder, full.names = TRUE), tmp_post_folder)
 wordpress_url <- "https://rmd-wordpress.eu" # replace with your own (test) website
-wp_post(post_folder, wordpress_url)
+wp_post(tmp_post_folder, wordpress_url)
+file.remove(dir(tmp_post_folder, full.names = TRUE))
 }
 }
