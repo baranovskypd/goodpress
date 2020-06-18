@@ -80,13 +80,27 @@ Later I hope to make this process easier, maybe by adding inline styles.
 
 I haven’t explored that yet.
 
-## Workflow
-
-Partly aspirational for now (what works at the moment is in `?wp_post`).
+## Workflow.
 
   - Create your posts in folders, one folder per post, with index.Rmd
     knitted to index.md and figures under a “figs” folder (so they can
     be different from non R related media).
+
+<!-- end list -->
+
+``` r
+fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
+#> /home/maelle/R/x86_64-pc-linux-gnu-library/3.6/goodpress/post-example2
+#> ├── chicago-fullnote-bibliography.csl
+#> ├── figs
+#> │   ├── pressure-1.png
+#> │   ├── unnamed-chunk-1-1.png
+#> │   └── unnamed-chunk-2-1.png
+#> ├── index.Rmd
+#> ├── index.md
+#> └── refs.bib
+```
+
   - The post index.Rmd should use
     [`hugodown::md_document`](https://hugodown.r-lib.org/reference/md_document.html)
     as an output format.
@@ -99,12 +113,16 @@ Partly aspirational for now (what works at the moment is in `?wp_post`).
     of the post on your WordPress next time. This way, next time the
     function is run, the post is *updated*.
 
+[Example post](https://rmd-wordpress.eu/post-rmd/) and [its
+source](https://github.com/maelle/goodpress/tree/main/inst/post-example2).
+Note that it includes citations as footnotes by using the [same strategy
+as hugodown](https://github.com/r-lib/hugodown#citations).
+
 The “one post per folder” thing is inspired by Hugo leaf bundles.
 
 On disk your post is stored as index.Rmd and index.md, but before upload
 to the WordPress API it is transformed to HTML using
-[`commonmark`](https://github.com/jeroen/commonmark) and a few regular
-expressions.
+[Pandoc](https://pandoc.org/).
 
 ## Motivation
 
