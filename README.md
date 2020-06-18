@@ -110,7 +110,7 @@ fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
     image media and then publishes the post.
   - The first time you run `wp_post()` in a folder, it creates a file
     called `.wordpress.yml` that contains, in particular, the URL and ID
-    of the post on your WordPress next time. This way, next time the
+    of the post on your WordPress website. This way, next time the
     function is run, the post is *updated*.
 
 [Example post](https://rmd-wordpress.eu/post-rmd/) and [its
