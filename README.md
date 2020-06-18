@@ -20,9 +20,10 @@ prototype since I don’t use WordPress myself. I need the prototype for
 [a course](https://scientific-rmd-blogging.netlify.app/). :smile\_cat:
 
 **Important disclaimer**: I don’t use WordPress, so I am not sure you
-should trust me. You are welcome to volunteer to take over this
-package/concept, but please tell me about it so I can add a link to your
-package.
+should trust me. You are welcome to try out the package (not on
+important stuff, rather in a playground of some sort), to contribute,
+and to volunteer to take over this package/concept. If you write a newer
+and better R package please tell me about it so I can add a link to it.
 
 ## Installation
 
