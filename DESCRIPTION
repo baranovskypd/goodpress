@@ -15,7 +15,7 @@ URL: https://github.com/maelle/goodpress
 BugReports: https://github.com/maelle/goodpress/issues
 Imports: 
     commonmark,
-    xml2,
+    purrr,
     downlit,
     glue,
     httr,
@@ -24,7 +24,8 @@ Imports:
     rmarkdown,
     yaml,
     magrittr,
-    hugodown
+    hugodown,
+    tibble
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

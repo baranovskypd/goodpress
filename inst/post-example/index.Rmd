@@ -7,13 +7,14 @@ output: hugodown::md_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,
-                      fig.path = "figures")
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Nice subsection
 
 [A link](https://masalmon.eu)
+
+Some inline code, `curl::ok()`.
 
 ```{r eval=FALSE}
 usethis::use_git()
