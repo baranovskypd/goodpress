@@ -90,14 +90,20 @@ Partly aspirational for now (what works at the moment is in `?wp_post`).
     [`hugodown::md_document`](https://hugodown.r-lib.org/reference/md_document.html)
     as an output format.
   - Run the function `wp_post()` that takes the path as argument, create
-    a draft post, uploads all image media stored in the “figs” folder,
-    edits the references to image media and then publishes the post.
+    a draft post in your website, uploads all image media stored in the
+    “figs” folder, edits the references to image media and then
+    publishes the post.
   - The first time you run `wp_post()` in a folder, it creates a file
     called `.wordpress.yml` that contains, in particular, the URL and ID
     of the post on your WordPress next time. This way, next time the
     function is run, the post is *updated*.
 
 The “one post per folder” thing is inspired by Hugo leaf bundles.
+
+On disk your post is stored as index.Rmd and index.md, but before upload
+to the WordPress API it is transformed to HTML using
+[`commonmark`](https://github.com/jeroen/commonmark) and a few regular
+expressions.
 
 ## Motivation
 
