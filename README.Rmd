@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 
 The goal of goodpress is to post to [WordPress](https://wordpress.org/) from [R Markdown](https://rmarkdown.rstudio.com/).
 This is mostly a prototype since I don't use WordPress myself.
-I need the prototype for a course. :smile_cat:
+I need the prototype for [a course](https://scientific-rmd-blogging.netlify.app/). :smile_cat:
 
 **Important disclaimer**: I don't use WordPress, so I am not sure you should trust me.
 You are welcome to volunteer to take over this package/concept, but please tell me about it 
@@ -73,7 +73,7 @@ Later I hope to make this process easier, maybe by adding inline styles.
 
 I haven't explored that yet.
 
-## Workflow.
+## Workflow
 
 * Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under a "figs" folder (so they can be different from non R related media).
 

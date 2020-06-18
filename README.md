@@ -16,8 +16,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 The goal of goodpress is to post to [WordPress](https://wordpress.org/)
 from [R Markdown](https://rmarkdown.rstudio.com/). This is mostly a
-prototype since I don’t use WordPress myself. I need the prototype for a
-course. :smile\_cat:
+prototype since I don’t use WordPress myself. I need the prototype for
+[a course](https://scientific-rmd-blogging.netlify.app/). :smile\_cat:
 
 **Important disclaimer**: I don’t use WordPress, so I am not sure you
 should trust me. You are welcome to volunteer to take over this
@@ -80,7 +80,7 @@ Later I hope to make this process easier, maybe by adding inline styles.
 
 I haven’t explored that yet.
 
-## Workflow.
+## Workflow
 
   - Create your posts in folders, one folder per post, with index.Rmd
     knitted to index.md and figures under a “figs” folder (so they can
