@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-A citation[@jqr]
+A citation[@jqr]. R is cool[@my-citation-key-for-r].
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -38,5 +38,11 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 ## Another plot
 
 ```{r}
-plot(1:10)
+plot(1:10, col = 3)
+```
+
+## Some other thing
+
+```{r}
+sqrt(4)
 ```

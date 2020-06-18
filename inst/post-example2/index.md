@@ -7,14 +7,14 @@ output: hugodown::md_document
 bibliography: refs.bib
 suppress-bibliography: true
 csl: chicago-fullnote-bibliography.csl
-rmd_hash: c049149844d44556
+rmd_hash: e9a8c7470ff3c322
 
 ---
 
 R Markdown
 ----------
 
-A citation[^1]
+A citation[^1]. R is cool[^2].
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.
 
@@ -51,11 +51,23 @@ Another plot
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='m'>1</span><span class='o'>:</span><span class='m'>10</span>)
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='m'>1</span><span class='o'>:</span><span class='m'>10</span>, col = <span class='m'>3</span>)
 </code></pre>
 <img src="figs/unnamed-chunk-1-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
+Some other thing
+----------------
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span>(<span class='m'>4</span>)
+<span class='c'>#&gt; [1] 2</span></code></pre>
+
+</div>
+
 [^1]: Rich FitzJohn et al., *Jqr: Client for 'Jq', a 'Json' Processor*, 2018, <https://CRAN.R-project.org/package=jqr>.
+
+[^2]: R Core Team, *R: A Language and Environment for Statistical Computing* (Vienna, Austria: R Foundation for Statistical Computing, 2020), <https://www.R-project.org/>.
 
