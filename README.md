@@ -58,6 +58,26 @@ website](https://rmd-wordpress.eu/):
   - Edited the [.htaccess file of my
     website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
 
+### Syntax highlighting
+
+#### For R
+
+To get syntax highlighting for R blocks, at the moment you need to add
+custom CSS.
+
+  - Find `system.file(file.path("css", "code.css"), package =
+    "goodpress")` and copy it to your clipboard.
+  - From your Wordpress admin dasbhoard, go to Appearance \> Customize
+    \> Additional CSS. Paste the CSS there and click on publish.
+
+You could edit colors that are in the CSS file.
+
+Later I hope to make this process easier, maybe by adding inline styles.
+
+#### Other languages
+
+I haven’t explored that yet.
+
 ## Workflow
 
 Partly aspirational for now (what works at the moment is in `?wp_post`).

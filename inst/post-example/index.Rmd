@@ -3,14 +3,12 @@ title: "Title of the Post"
 date: "2020-04-01T00:00:00"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
-output: 
-  md_document:
-    preserve_yaml: true
+output: hugodown::md_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-goodpress::set_hooks()
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.path = "figures")
 ```
 
 ## Nice subsection
@@ -22,4 +20,8 @@ usethis::use_git()
 ggplot(mtcars)
 plot(1:19)
 a <- TRUE
+```
+
+```{r eval=TRUE, fig.cap="A plot showing blabla"}
+plot(1:10)
 ```
