@@ -4,7 +4,7 @@ date: "2020-04-01T00:00:00"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
 output: hugodown::md_document
-rmd_hash: c36453d2cb6fd4de
+rmd_hash: 09bada1c0ffc365e
 
 ---
 
@@ -13,7 +13,7 @@ Nice subsection
 
 [A link](https://masalmon.eu)
 
-Some inline code, `curl::ok()`.
+Some inline code, [`crul::ok()`](https://docs.ropensci.org/crul/reference/ok.html).
 
 <div class="highlight">
 

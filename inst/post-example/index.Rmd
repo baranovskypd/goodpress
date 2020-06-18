@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [A link](https://masalmon.eu)
 
-Some inline code, `curl::ok()`.
+Some inline code, `crul::ok()`.
 
 ```{r eval=FALSE}
 usethis::use_git()

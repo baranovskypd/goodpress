@@ -22,11 +22,15 @@ wp_post <- function(post_folder, wordpress_url) {
 
    path <- file.path(post_folder, "index.md")
    wordpress_meta_path <- file.path(post_folder, ".wordpress.yml")
-
+   # create link
+   body <- gsub("\\[\\^(.*)\\]\\:", "<p id='fn:\\1'>\\1. </p>", split_yaml_body(readLines(path))$body)
+   # replace refs
+   body <- gsub("\\[\\^(.*)\\]", "<a href='#fn:\\1'><sup>\\1</sup></a>", body)
    body <- commonmark::markdown_html(
-     glue::glue_collapse(split_yaml_body(readLines(path))$body,
+     glue::glue_collapse(body,
                          sep = "\n"),
      extensions = TRUE)
+
 
    meta <- rmarkdown::yaml_front_matter(path)
 
