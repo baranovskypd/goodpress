@@ -86,9 +86,9 @@ Partly aspirational for now (what works at the moment is in `?wp_post`).
   - Create your posts in folders, one folder per post, with index.Rmd
     knitted to index.md and figures under a “figs” folder (so they can
     be different from non R related media).
-  - The post should use the template provided in this package. It is
-    rendered to Markdown. *TODO: Make this an actual usable template, or
-    maybe even an output format à la hugodown.*
+  - The post index.Rmd should use
+    [`hugodown::md_document`](https://hugodown.r-lib.org/reference/md_document.html)
+    as an output format.
   - Run the function `wp_post()` that takes the path as argument, create
     a draft post, uploads all image media stored in the “figs” folder,
     edits the references to image media and then publishes the post.
