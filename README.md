@@ -3,7 +3,7 @@
 
 # goodpress (or badpress?)
 
-> Write to Wordpress, from R Markdown, with a modern stack.
+> Write to WordPress, from R Markdown, with a modern stack.
 
 <!-- badges: start -->
 
@@ -13,11 +13,12 @@ or
 proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 <!-- badges: end -->
 
-The goal of goodpress is to post to Wordpress from R Markdown. This is
-mostly a prototype since I don’t use Wordpress myself. I need the
-prototype for a course. :smile\_cat:
+The goal of goodpress is to post to [WordPress](https://wordpress.org/)
+from [R Markdown](https://rmarkdown.rstudio.com/). This is mostly a
+prototype since I don’t use WordPress myself. I need the prototype for a
+course. :smile\_cat:
 
-**Important disclaimer**: I don’t use Wordpress, so I am not sure you
+**Important disclaimer**: I don’t use WordPress, so I am not sure you
 should trust me. You are welcome to volunteer to take over this
 package/concept, but please tell me about it so I can add a link to your
 package.
@@ -33,7 +34,7 @@ remotes::install_github("maelle/goodpress", ref = "main")
 
 ### Authentication
 
-From Wordpress point-of-view this package is a “remote application”
+From WordPress point-of-view this package is a “remote application”
 therefore it needs your website to use an [authentication
 *plugin*](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#authentication-plugins).
 At the moment, for the sake of simplicity, this package only relies on
@@ -43,7 +44,7 @@ Passwords](https://wordpress.org/plugins/application-passwords/).
 You cannot install plugins if you use wordpress.com (unless you have a
 costly business plan there), therefore with wordpress.com you cannot use
 the REST API. There are paid services out there providing a domain name,
-hosting and a one-click Wordpress install, for a few dollars a month,
+hosting and a one-click WordPress install, for a few dollars a month,
 that you could use if you don’t roll your own server.
 
 Here’s what I did to be able to use this package on my [test
@@ -67,7 +68,7 @@ custom CSS.
 
   - Find `system.file(file.path("css", "code.css"), package =
     "goodpress")` and copy it to your clipboard.
-  - From your Wordpress admin dasbhoard, go to Appearance \> Customize
+  - From your WordPress admin dasbhoard, go to Appearance \> Customize
     \> Additional CSS. Paste the CSS there and click on publish.
 
 You could edit colors that are in the CSS file.
@@ -83,13 +84,14 @@ I haven’t explored that yet.
 Partly aspirational for now (what works at the moment is in `?wp_post`).
 
   - Create your posts in folders, one folder per post, with index.Rmd
-    knitted to index.md and figures under a figures folder (so they can
+    knitted to index.md and figures under a “figs” folder (so they can
     be different from non R related media).
   - The post should use the template provided in this package. It is
     rendered to Markdown. *TODO: Make this an actual usable template, or
     maybe even an output format à la hugodown.*
-  - Run the function `wp_post()` that takes the path as argument and
-    (*TODO*) uploads media.
+  - Run the function `wp_post()` that takes the path as argument, create
+    a draft post, uploads all image media stored in the “figs” folder,
+    edits the references to image media and then publishes the post.
   - The first time you run `wp_post()` in a folder, it creates a file
     called `.wordpress.yml` that contains, in particular, the URL and ID
     of the post on your WordPress next time. This way, next time the
@@ -99,24 +101,24 @@ The “one post per folder” thing is inspired by Hugo leaf bundles.
 
 ## Motivation
 
-The current best tool for writing from R Markdown to Wordpress,
+The current best tool for writing from R Markdown to WordPress,
 [`knitr::knit2wp()`](http://tobiasdienlin.com/2019/03/08/how-to-publish-a-blog-post-on-wordpress-using-rmarkdown/),
 relies on a package that hasn’t been updated in years and that depends
 on the no longer recommended
 [`RCurl`](https://frie.codes/curl-vs-rcurl/) and `XML`. In the meantime,
-Wordpress gained a [REST API](https://developer.wordpress.org/rest-api/)
+WordPress gained a [REST API](https://developer.wordpress.org/rest-api/)
 that to my knowledge isn’t wrapped in any [working R
 package](https://github.com/jaredlander/wordpressr).
 
 There is also the solution to [use a plug-in to sync a GitHub repo with
-a Wordpress blog](https://github.com/mAAdhaTTah/wordpress-github-sync/)
+a WordPress blog](https://github.com/mAAdhaTTah/wordpress-github-sync/)
 (see [this website](https://abcdr.thinkr.fr/soumettre-un-article/) and
 [its source](https://github.com/ThinkR-open/abcdR)) but it doesn’t
 handle media. If you use a GitHub repo:
 
   - You could set up something like a GitHub Action that’d interact with
-    Wordpress REST API each time you push to the default branch.
+    WordPress REST API each time you push to the default branch.
   - Are you still sure you don’t want to use a [static website generator
     instead](https://gohugo.io/tools/migrations/)? :wink: More
     seriously, I am interested in blogging workflows so feel free to
-    tell me why you use Wordpress (in an issue for instance).
+    tell me why you use WordPress (in an issue for instance).
