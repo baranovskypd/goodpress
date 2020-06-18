@@ -70,6 +70,10 @@ Partly aspirational for now (what works at the moment is in `?wp_post`).
     maybe even an output format à la hugodown.*
   - Run the function `wp_post()` that takes the path as argument and
     (*TODO*) uploads media.
+  - The first time you run `wp_post()` in a folder, it creates a file
+    called `.wordpress.yml` that contains, in particular, the URL and ID
+    of the post on your WordPress next time. This way, next time the
+    function is run, the post is *updated*.
 
 The “one post per folder” thing is inspired by Hugo leaf bundles.
 
