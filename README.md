@@ -17,9 +17,9 @@ status](https://github.com/maelle/goodpress/workflows/R-CMD-check/badge.svg)](ht
 <!-- badges: end -->
 
 The goal of goodpress is to post to [WordPress](https://wordpress.org/)
-from [R Markdown](https://rmarkdown.rstudio.com/). This is mostly a
-prototype since I don’t use WordPress myself. I need the prototype for
-[a course](https://scientific-rmd-blogging.netlify.app/). :smile\_cat:
+from [R Markdown](https://rmarkdown.rstudio.com/). I need this prototype
+for [a course](https://scientific-rmd-blogging.netlify.app/).
+:smile\_cat:
 
 **Important disclaimer**: I don’t use WordPress, so I am not sure you
 should trust me. You are welcome to try out the package (not on
