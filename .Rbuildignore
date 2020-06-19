@@ -3,3 +3,5 @@
 ^README\.Rmd$
 ^CODE_OF_CONDUCT\.md$
 ^LICENSE\.md$
+^inst/post-example/\.wordpress\.yml$
+^inst/post-example2/\.wordpress\.yml$

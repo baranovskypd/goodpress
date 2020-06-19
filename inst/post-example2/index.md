@@ -1,5 +1,5 @@
 ---
-title: "Another Rmd post"
+title: "Another Rmd Blog Post"
 date: "2020-04-01T00:00:00"
 slug: "post-rmd"
 excerpt: "Here I summarize this fantastic post"
@@ -7,7 +7,7 @@ output: hugodown::md_document
 bibliography: refs.bib
 suppress-bibliography: true
 csl: chicago-fullnote-bibliography.csl
-rmd_hash: e9a8c7470ff3c322
+rmd_hash: 5c196b65a646789f
 
 ---
 

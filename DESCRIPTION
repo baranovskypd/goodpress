@@ -1,6 +1,5 @@
 Package: goodpress
-Title: Provides Output Format and Utilities to Write Posts on
-    Wordpress
+Title: From R Markdown to WordPress with a Modern Stack
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Maëlle",
@@ -20,6 +19,7 @@ Imports:
     jsonlite,
     knitr,
     magrittr,
+    methods,
     purrr,
     rmarkdown,
     tibble,

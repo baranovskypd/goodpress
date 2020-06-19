@@ -9,7 +9,7 @@ wp_call_api <- function(VERB, api_url, body = NULL,
                  )
   )
 
-  if (is(body, "form_file")) {
+  if (methods::is(body, "form_file")) {
 
     api_response <- httr::VERB(verb = VERB,
                                url = api_url,
