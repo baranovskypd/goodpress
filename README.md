@@ -12,6 +12,8 @@ has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R build
+status](https://github.com/maelle/goodpress/workflows/R-CMD-check/badge.svg)](https://github.com/maelle/goodpress/actions)
 <!-- badges: end -->
 
 The goal of goodpress is to post to [WordPress](https://wordpress.org/)
@@ -20,10 +22,9 @@ prototype since I don’t use WordPress myself. I need the prototype for
 [a course](https://scientific-rmd-blogging.netlify.app/). :smile\_cat:
 
 **Important disclaimer**: I don’t use WordPress, so I am not sure you
-should trust me. You are welcome to try out the package (not on
-important stuff, rather in a playground of some sort), to contribute,
-and to volunteer to take over this package/concept. If you write a newer
-and better R package please tell me about it so I can add a link to it.
+should trust me.
+<!-- You are welcome to try out the package (not on important stuff, rather in a playground of some sort), to contribute, and to volunteer to take over this package/concept. If you write a newer and better R package please tell me about it  -->
+so I can add a link to it.
 
 ## Installation
 

@@ -5,3 +5,4 @@
 ^LICENSE\.md$
 ^inst/post-example/\.wordpress\.yml$
 ^inst/post-example2/\.wordpress\.yml$
+^\.github$
