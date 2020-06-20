@@ -25,9 +25,16 @@ wp_post <- function(post_folder, wordpress_url) {
 
    html_path <- tempfile(fileext = ".html")
    file.create(html_path)
-   rmarkdown::pandoc_convert(file.path(getwd(), path),
-                             to = "html",
-                             output = html_path)
+
+   withr::with_dir(
+     post_folder,
+     rmarkdown::pandoc_convert(
+       "index.md",
+       to = "html",
+       output = html_path,
+       wd = getwd()
+       )
+   )
 
    body <- glue::glue_collapse(readLines(html_path), sep = "\n")
    file.remove(html_path)
