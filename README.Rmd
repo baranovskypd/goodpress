@@ -52,16 +52,16 @@ that you could use if you don't roll your own server.
 
 Here's what I did to be able to use this package on my [test website](https://rmd-wordpress.eu/):
 
-* Installed and activated the [Application Passwords plugin](https://wordpress.org/plugins/application-passwords/).
-* Created a new user with editor rights, not admin, and from the admin panel I created an application password for "rmarkdown" for that user.
-* In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`.
+* Installed and activated the [Application Passwords plugin](https://wordpress.org/plugins/application-passwords/). _`Don't forget to keep your WordPress plugins up-to-date especially because of security updates.`_
+* Created a new user with editor rights, not admin, and from the admin panel I created an application password for "rmarkdown" for that user. _`Doing this for an user with restricted access is safer.`_
+* In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`. _Keep `.Renviron` safe, it contains secrets!_
 * Edited the [.htaccess file of my website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
 
 ### Syntax highlighting
 
 #### For R
 
-To get syntax highlighting for R blocks, at the moment you need to add custom CSS.
+To get syntax highlighting for R blocks, at the moment you need to add custom CSS (once, like the plugin setup stuff).
 
 * Find `system.file(file.path("css", "code.css"), package = "goodpress")` and copy it to your clipboard.
 * From your WordPress admin dasbhoard, go to Appearance > Customize > Additional CSS. Paste the CSS there and click on publish.

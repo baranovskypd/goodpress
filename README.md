@@ -58,10 +58,13 @@ website](https://rmd-wordpress.eu/):
 
   - Installed and activated the [Application Passwords
     plugin](https://wordpress.org/plugins/application-passwords/).
+    *`Don't forget to keep your WordPress plugins up-to-date especially
+    because of security updates.`*
   - Created a new user with editor rights, not admin, and from the admin
     panel I created an application password for “rmarkdown” for that
-    user.
+    user. *`Doing this for an user with restricted access is safer.`*
   - In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`.
+    *Keep `.Renviron` safe, it contains secrets\!*
   - Edited the [.htaccess file of my
     website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
 
@@ -70,7 +73,7 @@ website](https://rmd-wordpress.eu/):
 #### For R
 
 To get syntax highlighting for R blocks, at the moment you need to add
-custom CSS.
+custom CSS (once, like the plugin setup stuff).
 
   - Find `system.file(file.path("css", "code.css"), package =
     "goodpress")` and copy it to your clipboard.
