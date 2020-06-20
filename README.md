@@ -15,7 +15,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R build
 status](https://github.com/maelle/goodpress/workflows/R-CMD-check/badge.svg)](https://github.com/maelle/goodpress/actions?query=workflow%3AR-CMD-check)
 [![Codecov test
-coverage](https://codecov.io/gh/maelle/goodpress/branch/master/graph/badge.svg)](https://codecov.io/gh/maelle/goodpress?branch=master)
+coverage](https://codecov.io/gh/maelle/goodpress/branch/main/graph/badge.svg)](https://codecov.io/gh/maelle/goodpress?branch=main)
 <!-- badges: end -->
 
 The goal of goodpress is to post to [WordPress](https://wordpress.org/)
