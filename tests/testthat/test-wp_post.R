@@ -5,7 +5,11 @@ test_that("wp_post works", {
     post_folder <- system.file(file.path("post-example2"), package = "goodpress")
     tmp_post_folder <- file.path(tempdir(), "post")
     dir.create(tmp_post_folder)
-    file.copy(dir(post_folder, full.names = TRUE), tmp_post_folder)
+    file.copy(
+      dir(post_folder, full.names = TRUE),
+      tmp_post_folder,
+      recursive = TRUE
+      )
 
     # Just test that... we don't get errors :-s
     x <- wp_post(tmp_post_folder,
