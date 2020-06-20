@@ -34,4 +34,5 @@ Remotes:
     ropensci/vcr
 Suggests: 
     vcr,
-    testthat
+    testthat,
+    covr
