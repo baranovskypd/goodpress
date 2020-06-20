@@ -78,23 +78,23 @@ wp_post <- function(post_folder, wordpress_url) {
 
    # Media
 
-   if(length(dir(file.path(post_folder, "figs"))) > 0) {
-     media <- .wp_media_post(
-       post,
-       post_folder = post_folder,
-       post_id = post_post$id,
-       wordpress_url
-     )
+   media <- .wp_media_post(
+     post,
+     post_folder = post_folder,
+     post_id = post_post$id,
+     wordpress_url
+   )
 
-     for (i in seq_along(media)) {
+   if (length(media)) {
 
-       post_list$content <- gsub(paste0("figs/", media$fig[i]),
-                    media$url[i],
-                    post_list$content)
-     }
+       for (i in seq_along(media)) {
 
-   }
+         post_list$content <- gsub(paste0("figs/", media$fig[i]),
+                      media$url[i],
+                      post_list$content)
+       }
 
+}
    post_list$status <- "publish"
 
    post <- jsonlite::toJSON(
@@ -160,11 +160,15 @@ wp_post <- function(post_folder, wordpress_url) {
   figs <- dir(file.path(post_folder, "figs"),
               full.names = TRUE)
 
-  fig_urls <- purrr::map_chr(
-             figs, wp_upload_media,
-              wordpress_url = wordpress_url,
-              post_id = post_id)
-  return(tibble::tibble(fig = basename(figs), url = fig_urls))
+  if (length(figs)) {
+    fig_urls <- purrr::map_chr(
+      figs, wp_upload_media,
+      wordpress_url = wordpress_url,
+      post_id = post_id)
+    return(tibble::tibble(fig = basename(figs), url = fig_urls))
+  } else {
+    return(NULL)
+  }
 }
 
 wp_delete_media <- function(media_id, wordpress_url) {

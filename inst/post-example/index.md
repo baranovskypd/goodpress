@@ -4,7 +4,7 @@ date: "2020-04-01T00:00:00"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
 output: hugodown::md_document
-rmd_hash: 09bada1c0ffc365e
+rmd_hash: baf6dc963fbe9288
 
 ---
 
@@ -21,22 +21,6 @@ Some inline code, [`crul::ok()`](https://docs.ropensci.org/crul/reference/ok.htm
 <span class='nf'>ggplot</span>(<span class='k'>mtcars</span>)
 <span class='nf'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='m'>1</span><span class='o'>:</span><span class='m'>19</span>)
 <span class='k'>a</span> <span class='o'>&lt;-</span> <span class='kc'>TRUE</span></code></pre>
-
-</div>
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='m'>1</span><span class='o'>:</span><span class='m'>10</span>)
-</code></pre>
-
-<div class="figure" style="text-align: center">
-
-<img src="figs/unnamed-chunk-2-1.png" alt="A plot showing blabla" width="700px" />
-<p class="caption">
-A plot showing blabla
-</p>
-
-</div>
 
 </div>
 

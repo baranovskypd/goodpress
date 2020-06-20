@@ -1,5 +1,5 @@
 ---
-title: "yay rmd"
+title: "Another Rmd Blog Post"
 date: "2020-04-01T00:00:00"
 slug: "post-rmd"
 excerpt: "Here I summarize this fantastic post"

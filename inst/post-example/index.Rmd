@@ -22,7 +22,3 @@ ggplot(mtcars)
 plot(1:19)
 a <- TRUE
 ```
-
-```{r eval=TRUE, fig.cap="A plot showing blabla"}
-plot(1:10)
-```
