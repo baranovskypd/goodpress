@@ -3,6 +3,7 @@
 #' @param post_folder Path to folder where the post (index.Rmd, index.md, media)
 #' lives
 #' @param wordpress_url URL to your website
+#' @param status Status to be set to the post (One of: "publish", "future", "draft", "pending", "private")
 #'
 #' @return URL to the post (invisibly)
 #' @export
@@ -18,7 +19,9 @@
 #' wp_post(tmp_post_folder, wordpress_url)
 #' file.remove(dir(tmp_post_folder, full.names = TRUE))
 #' }
-wp_post <- function(post_folder, wordpress_url) {
+wp_post <- function(post_folder, wordpress_url, status = "publish") {
+
+   stopifnot(status %in% c("publish", "future", "draft", "pending", "private"))
 
    path <- file.path(post_folder, "index.md")
    wordpress_meta_path <- file.path(post_folder, ".wordpress.yml")
@@ -97,7 +100,7 @@ wp_post <- function(post_folder, wordpress_url) {
     post_list$content <- as.character(content)
 
 }
-   post_list$status <- "publish"
+   post_list$status <- status
 
    post <- jsonlite::toJSON(
      post_list,

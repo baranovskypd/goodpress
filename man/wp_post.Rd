@@ -4,13 +4,15 @@
 \alias{wp_post}
 \title{Post a post to Wordpress}
 \usage{
-wp_post(post_folder, wordpress_url)
+wp_post(post_folder, wordpress_url, status = "publish")
 }
 \arguments{
 \item{post_folder}{Path to folder where the post (index.Rmd, index.md, media)
 lives}
 
 \item{wordpress_url}{URL to your website}
+
+\item{status}{Status to be set to the post (One of: "publish", "future", "draft", "pending", "private")}
 }
 \value{
 URL to the post (invisibly)
