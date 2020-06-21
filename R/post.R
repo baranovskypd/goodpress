@@ -86,13 +86,15 @@ wp_post <- function(post_folder, wordpress_url) {
    )
 
    if (length(media)) {
-
+     content <- xml2::read_html(post_list$content)
+     imgs <- xml2::xml_find_all(content, "//img")
        for (i in seq_along(media)) {
-
-         post_list$content <- gsub(paste0("figs/", media$fig[i]),
-                      media$url[i],
-                      post_list$content)
+         this_img <- imgs[xml2::xml_attr(imgs, "src") == paste0("figs/", media$fig[i])]
+          xml2::xml_attr(
+            this_img, "src"
+           ) <- media$url[i]
        }
+    post_list$content <- as.character(content)
 
 }
    post_list$status <- "publish"
