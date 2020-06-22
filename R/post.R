@@ -42,7 +42,8 @@ wp_post <- function(post_folder, wordpress_url) {
        "index.md",
        to = "html",
        output = html_path,
-       wd = getwd()
+       wd = getwd(),
+       options = "--mathjax"
        )
    )
 
@@ -107,8 +108,14 @@ wp_post <- function(post_folder, wordpress_url) {
        }
     post_list$content <- as.character(content)
 
-}
-   post_list$status <- meta$status
+   }
+
+   if(is.null(meta$status)){
+     post_list$status <- "publish"
+   } else {
+     post_list$status <- meta$status
+   }
+
 
    post <- jsonlite::toJSON(
      post_list,
@@ -132,7 +139,7 @@ wp_post <- function(post_folder, wordpress_url) {
    message("Post posted with status ", post_post$status)
 
   if(base::interactive()) {
-    if (meta$status %in% c("publish", "private")) {
+    if (post_post$status %in% c("publish", "private")) {
       utils::browseURL(post_post$link)
     }
 

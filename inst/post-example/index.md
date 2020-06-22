@@ -3,9 +3,9 @@ title: "Title of the Post"
 date: "2020-04-01T00:00:00"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
-status: "private"
+status: "publish"
 output: hugodown::md_document
-rmd_hash: 7bbe1ffafcc27d00
+rmd_hash: b702c045bfd24741
 
 ---
 
@@ -24,4 +24,13 @@ Some inline code, [`crul::ok()`](https://docs.ropensci.org/crul/reference/ok.htm
 <span class='k'>a</span> <span class='o'>&lt;-</span> <span class='kc'>TRUE</span></code></pre>
 
 </div>
+
+Maths
+-----
+
+When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+$$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}} $$
 

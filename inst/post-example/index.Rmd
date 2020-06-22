@@ -3,7 +3,7 @@ title: "Title of the Post"
 date: "2020-04-01T00:00:00"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
-status: "private"
+status: "publish"
 output: hugodown::md_document
 ---
 
@@ -23,3 +23,11 @@ ggplot(mtcars)
 plot(1:19)
 a <- TRUE
 ```
+
+## Maths
+
+When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+$$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}} $$

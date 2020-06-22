@@ -20,8 +20,7 @@ coverage](https://codecov.io/gh/maelle/goodpress/branch/main/graph/badge.svg)](h
 
 The goal of goodpress is to post to [WordPress](https://wordpress.org/)
 from [R Markdown](https://rmarkdown.rstudio.com/). I need this prototype
-for [a course](https://scientific-rmd-blogging.netlify.app/).
-:smile\_cat:
+for [a course](https://scientific-rmd-blogging.netlify.app/). 😺
 
 **Important disclaimer**: I don’t use WordPress, so I am not sure you
 should trust me. You are welcome to try out the package (not on
@@ -37,6 +36,18 @@ You can install the released version of goodpress from this repository:
 # install.packages("remotes")
 remotes::install_github("maelle/goodpress", ref = "main")
 ```
+
+Then you will need to tweaks things on your website for three aspects
+
+  - Authentication (this is *compulsory*)
+  - Syntax highlighting
+  - Math
+
+You only need to do these *once*, so that’s only potentially painful at
+setup.
+
+You might not need to tweak syntax highlighting and math stuff if you,
+well, never show code or never show math equations in your posts.
 
 ### Authentication
 
@@ -88,6 +99,27 @@ Later I hope to make this process easier, maybe by adding inline styles.
 
 I haven’t explored that yet.
 
+### Math
+
+  - Use [MathJax
+    input](https://docs.mathjax.org/en/latest/input/tex/index.html) (can
+    also be MathML)
+  - Customize your theme. From WordPress interface go to Appearance \>
+    Theme Editor. Add the lines below (that come from [MathJax
+    docs](https://www.mathjax.org/#gettingstarted)) to the `<head>` div
+    of `header.php`, then save.
+
+<!-- end list -->
+
+``` html
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+```
+
+See [example post with math](https://rmd-wordpress.eu/post-slug/) and
+[its
+source](https://github.com/maelle/goodpress/tree/main/inst/post-example).
+
 ## Workflow
 
   - Create your posts in folders, one folder per post, with index.Rmd
@@ -123,6 +155,30 @@ fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
 source](https://github.com/maelle/goodpress/tree/main/inst/post-example2).
 Note that it includes citations as footnotes by using the [same strategy
 as hugodown](https://github.com/r-lib/hugodown#citations).
+
+  - The default status of the post is “publish”. If you want another
+    status (status has to be one of: “publish”, “future”, “draft”,
+    “pending”, “private”) , write it in the yaml (and then knit
+    index.Rmd again) e.g.
+
+<!-- end list -->
+
+``` yaml
+---
+title: "Title of the Post"
+date: "2020-04-01T00:00:00"
+slug: "post-slug"
+excerpt: "Here I summarize this fantastic post"
+status: "private"
+output: hugodown::md_document
+---
+```
+
+The package cannot handle private posts with password, only private
+posts that are visible to admins and editors only. You could create a
+private post, and then from the WordPress interface make it visible with
+password. Make it private again before trying to update the post with
+the R package.
 
 The “one post per folder” thing is inspired by Hugo leaf bundles.
 
