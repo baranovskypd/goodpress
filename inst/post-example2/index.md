@@ -7,7 +7,11 @@ output: hugodown::md_document
 bibliography: refs.bib
 suppress-bibliography: true
 csl: chicago-fullnote-bibliography.csl
-rmd_hash: 5c196b65a646789f
+categories: R
+tags:
+  - citation
+  - code
+rmd_hash: 3460f526e9a1c3a8
 
 ---
 

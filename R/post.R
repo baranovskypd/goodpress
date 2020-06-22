@@ -50,17 +50,26 @@ wp_post <- function(post_folder, wordpress_url) {
 
    meta <- rmarkdown::yaml_front_matter(path)
 
-   if (!is.null(meta$categories)) {
-     categories <- wp_handle_categories(meta$categories, wordpress_url)$id
-   }
+  categories <- wp_handle_categories(
+       meta$categories, wordpress_url
+       )
+
+  tags <- wp_handle_tags(
+    meta$tags, wordpress_url
+  )
 
    post_list <- list( 'date' = meta$date,
                       'title' = meta$title,
-                      'slug' = meta$slug,
+                      'slug' = meta$slug %||% NULL,
+                      'comment_status' = meta$comment_status %||% "closed",
+                      'ping_status' = meta$ping_status %||% "closed",
                       'status' = 'draft',
                       'content' = body,
-                      'excerpt' = meta$excerpt,
-                      'format' = 'standard'
+                      'excerpt' = meta$excerpt %||% NULL,
+                      'format' = meta$format %||% 'standard',
+                      'categories' = categories,
+                      'tags' = tags,
+                      'author' = meta$author %||% NULL
                       )
 
    post <- jsonlite::toJSON(
@@ -217,6 +226,10 @@ wp_upload_media <- function(media_path, wordpress_url, post_id) {
 
 wp_handle_categories <- function(categories, wordpress_url) {
 
+  if (is.null(categories)) {
+    return(NULL)
+  }
+
   # list existing categories
 
   online_categories <- wp_call_api(
@@ -248,7 +261,49 @@ wp_handle_categories <- function(categories, wordpress_url) {
     }
   }
 
-  # return categories names and ids
-  browser()
+  # return categories IDs
+  online_categories_df$id[online_categories_df$name %in% categories]
+
+}
+
+wp_handle_tags <- function(tags, wordpress_url) {
+
+  if (is.null(tags)) {
+    return(NULL)
+  }
+
+  # list existing tags
+
+  online_tags <- wp_call_api(
+    VERB = "GET",
+    api_url = paste0(wordpress_url, "/wp-json/wp/v2/tags")
+  )
+
+  online_tags_df <- data.frame(
+    id = purrr::map_chr(online_tags, "id"),
+    name = purrr::map_chr(online_tags, "name"),
+    stringsAsFactors = FALSE
+  )
+
+  # If needed create tags
+  offline_tags <- tags[!tags %in% online_tags_df$name]
+
+  if (length(offline_tags) > 0) {
+    for(tag in offline_tags) {
+
+      new_tag <- wp_call_api(
+        VERB = "POST",
+        api_url = paste0(wordpress_url, "/wp-json/wp/v2/tags?name=", tag)
+      )
+      online_tags_df <- rbind(
+        online_tags_df,
+        data.frame(id = new_tag$id, name = new_tag$name,
+                   stringsAsFactors = FALSE)
+      )
+    }
+  }
+
+  # return tags IDs
+  online_tags_df$id[online_tags_df$name %in% tags]
 
 }

@@ -1,6 +1,7 @@
 ---
 title: "Title of the Post"
 date: "2020-04-01T00:00:00"
+author: "admin7891"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
 status: "publish"
@@ -11,7 +12,7 @@ categories:
 tags:
   - crul
   - mathjax
-rmd_hash: b2d0936d388dca6b
+rmd_hash: 1a89e886709608dc
 
 ---
 

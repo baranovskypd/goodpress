@@ -7,6 +7,10 @@ output: hugodown::md_document
 bibliography: refs.bib
 suppress-bibliography: true
 csl: chicago-fullnote-bibliography.csl
+categories: R
+tags:
+  - citation
+  - code
 ---
 
 ```{r setup, include=FALSE}
