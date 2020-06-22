@@ -4,21 +4,28 @@
 \alias{wp_post}
 \title{Post a post to Wordpress}
 \usage{
-wp_post(post_folder, wordpress_url, status = "publish")
+wp_post(post_folder, wordpress_url)
 }
 \arguments{
-\item{post_folder}{Path to folder where the post (index.Rmd, index.md, media)
+\item{post_folder}{Path to folder where the post (index.Rmd, index.md, images)
 lives}
 
 \item{wordpress_url}{URL to your website}
-
-\item{status}{Status to be set to the post (One of: "publish", "future", "draft", "pending", "private")}
 }
 \value{
 URL to the post (invisibly)
 }
 \description{
 Post a post to Wordpress
+}
+\details{
+To set the status of the post (One of: "publish", "future", "draft",
+"pending", "private") use a YAML field e.g. \code{status: "draft"}.
+
+The package cannot handle private posts with password, only private posts that
+are visible to admins and editors only. You could create a private post, and
+then from the WordPress interface make it visible with password. Make it private again
+before trying to update the post with the R package.
 }
 \examples{
 \dontrun{

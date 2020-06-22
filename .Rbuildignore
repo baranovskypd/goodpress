@@ -7,3 +7,6 @@
 ^inst/post-example2/\.wordpress\.yml$
 ^\.github$
 ^codecov\.yml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

@@ -52,10 +52,10 @@ that you could use if you don't roll your own server.
 
 Here's what I did to be able to use this package on my [test website](https://rmd-wordpress.eu/):
 
-* Installed and activated the [Application Passwords plugin](https://wordpress.org/plugins/application-passwords/). _`Don't forget to keep your WordPress plugins up-to-date especially because of security updates.`_
-* Created a new user with editor rights, not admin, and from the admin panel I created an application password for "rmarkdown" for that user. _`Doing this for an user with restricted access is safer.`_
+* Installed and activated the [Application Passwords plugin](https://wordpress.org/plugins/application-passwords/). _Don't forget to keep your WordPress plugins up-to-date especially because of security updates._
+* Created a new user with editor rights, not admin, and from the admin panel I created an application password for "rmarkdown" for that user. _Doing this for an user with restricted access is safer._
 * In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`. _Keep `.Renviron` safe, it contains secrets!_
-* Edited the [.htaccess file of my website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
+* Edited the [.htaccess file of my website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing).
 
 ### Syntax highlighting
 
@@ -76,7 +76,7 @@ I haven't explored that yet.
 
 ## Workflow
 
-* Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under a "figs" folder (so they can be different from non R related media).
+* Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under a "figs" folder.
 
 ```{r}
 fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))

@@ -58,15 +58,15 @@ website](https://rmd-wordpress.eu/):
 
   - Installed and activated the [Application Passwords
     plugin](https://wordpress.org/plugins/application-passwords/).
-    *`Don't forget to keep your WordPress plugins up-to-date especially
-    because of security updates.`*
+    *Don’t forget to keep your WordPress plugins up-to-date especially
+    because of security updates.*
   - Created a new user with editor rights, not admin, and from the admin
     panel I created an application password for “rmarkdown” for that
-    user. *`Doing this for an user with restricted access is safer.`*
+    user. *Doing this for an user with restricted access is safer.*
   - In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`.
     *Keep `.Renviron` safe, it contains secrets\!*
   - Edited the [.htaccess file of my
-    website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing)
+    website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing).
 
 ### Syntax highlighting
 
@@ -91,8 +91,7 @@ I haven’t explored that yet.
 ## Workflow
 
   - Create your posts in folders, one folder per post, with index.Rmd
-    knitted to index.md and figures under a “figs” folder (so they can
-    be different from non R related media).
+    knitted to index.md and figures under a “figs” folder.
 
 <!-- end list -->
 
@@ -102,8 +101,7 @@ fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
 #> ├── chicago-fullnote-bibliography.csl
 #> ├── figs
 #> │   ├── pressure-1.png
-#> │   ├── unnamed-chunk-1-1.png
-#> │   └── unnamed-chunk-2-1.png
+#> │   └── unnamed-chunk-1-1.png
 #> ├── index.Rmd
 #> ├── index.md
 #> └── refs.bib

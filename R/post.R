@@ -1,9 +1,16 @@
 #' Post a post to Wordpress
 #'
-#' @param post_folder Path to folder where the post (index.Rmd, index.md, media)
+#' @param post_folder Path to folder where the post (index.Rmd, index.md, images)
 #' lives
 #' @param wordpress_url URL to your website
-#' @param status Status to be set to the post (One of: "publish", "future", "draft", "pending", "private")
+#'
+#' @details To set the status of the post (One of: "publish", "future", "draft",
+#'  "pending", "private") use a YAML field e.g. `status: "draft"`.
+#'
+#'  The package cannot handle private posts with password, only private posts that
+#'   are visible to admins and editors only. You could create a private post, and
+#'   then from the WordPress interface make it visible with password. Make it private again
+#'   before trying to update the post with the R package.
 #'
 #' @return URL to the post (invisibly)
 #' @export
@@ -19,9 +26,9 @@
 #' wp_post(tmp_post_folder, wordpress_url)
 #' file.remove(dir(tmp_post_folder, full.names = TRUE))
 #' }
-wp_post <- function(post_folder, wordpress_url, status = "publish") {
+wp_post <- function(post_folder, wordpress_url) {
 
-   stopifnot(status %in% c("publish", "future", "draft", "pending", "private"))
+
 
    path <- file.path(post_folder, "index.md")
    wordpress_meta_path <- file.path(post_folder, ".wordpress.yml")
@@ -50,7 +57,8 @@ wp_post <- function(post_folder, wordpress_url, status = "publish") {
                       'status' = 'draft',
                       'content' = body,
                       'excerpt' = meta$excerpt,
-                      'format' = 'standard')
+                      'format' = 'standard'
+                      )
 
    post <- jsonlite::toJSON(
      post_list,
@@ -100,7 +108,7 @@ wp_post <- function(post_folder, wordpress_url, status = "publish") {
     post_list$content <- as.character(content)
 
 }
-   post_list$status <- status
+   post_list$status <- meta$status
 
    post <- jsonlite::toJSON(
      post_list,
@@ -121,11 +129,14 @@ wp_post <- function(post_folder, wordpress_url, status = "publish") {
      ),
      file = wordpress_meta_path)
 
-
+   message("Post posted with status ", post_post$status)
 
   if(base::interactive()) {
-    utils::browseURL(post_post$link)
-  }
+    if (meta$status %in% c("publish", "private")) {
+      utils::browseURL(post_post$link)
+    }
+
+    }
 
   invisible(post_post$link)
 

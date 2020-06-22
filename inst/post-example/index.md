@@ -3,8 +3,9 @@ title: "Title of the Post"
 date: "2020-04-01T00:00:00"
 slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
+status: "private"
 output: hugodown::md_document
-rmd_hash: baf6dc963fbe9288
+rmd_hash: 7bbe1ffafcc27d00
 
 ---
 
