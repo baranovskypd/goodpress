@@ -1,0 +1,14 @@
+You can install the released version of goodpress from its GitHub repository:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("maelle/goodpress", ref = "main")
+```
+
+Then you will need to tweaks things **once** on your website for three aspects
+
+* Authentication (this is **compulsory**)
+* Syntax highlighting (if you want to show R code in your posts)
+* Math (if you want to show math in your posts)
+
+See `vignette("setup", package = "goodpress")`.

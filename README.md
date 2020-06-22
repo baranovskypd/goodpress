@@ -36,7 +36,8 @@ and better R package please tell me about it so I can add a link to it.
 
 ## Installation
 
-You can install the released version of goodpress from this repository:
+You can install the released version of goodpress from its GitHub
+repository:
 
 ``` r
 # install.packages("remotes")
@@ -61,7 +62,7 @@ See `vignette("setup", package = "goodpress")`.
 
 ``` r
 fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
-#> /home/maelle/R/x86_64-pc-linux-gnu-library/3.6/goodpress/post-example2
+#> /tmp/RtmpJ97MEi/temp_libpath3f882f0a7940/goodpress/post-example2
 #> ├── chicago-fullnote-bibliography.csl
 #> ├── figs
 #> │   ├── pressure-1.png
@@ -75,13 +76,13 @@ fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
     [`hugodown::md_document`](https://hugodown.r-lib.org/reference/md_document.html)
     as an output format.
   - Knit your post and then, run the function `wp_post()` that takes the
-    path as argument, create a draft post in your website, uploads all
-    image media stored in the “figs” folder, edits the references to
-    image media and then publishes the post.
-  - The first time you run `wp_post()` in a folder, it creates a file
-    called `.wordpress.yml` that contains, in particular, the URL and ID
-    of the post on your WordPress website. This way, next time the
-    function is run, the post is *updated*.
+    path **to the post folder** as argument, create a draft post in your
+    website, uploads all image media stored in the “figs” folder, edits
+    the references to image media and then publishes the post.
+  - The first time you run `wp_post()` for a folder, it creates a file
+    called `.wordpress.yml` in the post folder, that contains, in
+    particular, the URL and ID of the post on your WordPress website.
+    This way, next time the function is run, the post is *updated*.
 
 [Example post](https://rmd-wordpress.eu/post-rmd/) and [its
 source](https://github.com/maelle/goodpress/tree/main/inst/post-example2).
@@ -121,7 +122,7 @@ to the WordPress API it is transformed to HTML using
 ## Motivation
 
 The current best tool for writing from R Markdown to WordPress,
-[`knitr::knit2wp()`](http://tobiasdienlin.com/2019/03/08/how-to-publish-a-blog-post-on-wordpress-using-rmarkdown/),
+[`knitr::knit2wp()`](https://tobiasdienlin.com/2019/03/08/how-to-publish-a-blog-post-on-wordpress-using-rmarkdown/),
 relies on a package that hasn’t been updated in years and that depends
 on the no longer recommended
 [`RCurl`](https://frie.codes/curl-vs-rcurl/) and `XML`. In the meantime,
@@ -140,4 +141,4 @@ handle media. If you use a GitHub repo:
   - Are you still sure you don’t want to use a [static website generator
     instead](https://gohugo.io/tools/migrations/)? :wink: More
     seriously, I am interested in blogging workflows so feel free to
-    tell me why you use WordPress (in an issue for instance).
+    tell me why and how you use WordPress (in an issue for instance).

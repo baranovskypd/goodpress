@@ -2,9 +2,17 @@ url: https://maelle.github.io/goodpress/
 
 navbar:
   structure:
-    left:  [home, setup, reference, news]
-    right: [github]
+    left:  [home, setup, usage, reference]
+    right: [github, twitter, news]
   components:
+    articles: ~
+    intro: ~
+    usage:
+       text: "Usage"
+       href: articles/goodpress.html
     setup:
        text: "Setup"
        href: articles/setup.html
+    twitter:
+     icon: "fab fa-twitter fa-lg"
+     href: http://twitter.com/ma_salmon

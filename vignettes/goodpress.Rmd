@@ -1,0 +1,30 @@
+---
+title: "goodpress"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{goodpress}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Installation
+
+```{r child='../man/rmdhunks/installation.Rmd'} 
+```
+
+## Workflow
+
+```{r child='../man/rmdhunks/usage.Rmd'} 
+```
+
+## Motivation
+
+```{r child='../man/rmdhunks/motivation.Rmd'} 
+```
