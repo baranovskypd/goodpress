@@ -4,6 +4,7 @@ navbar:
   structure:
     left:  [home, setup, reference, news]
     right: [github]
-  setup:
-     text: "Setup"
-     href: articles/setup.html
+  components:
+    setup:
+       text: "Setup"
+       href: articles/setup.html
