@@ -36,5 +36,6 @@ Remotes:
 Suggests: 
     vcr,
     testthat,
-    covr
+    covr,
+    fs
 VignetteBuilder: knitr

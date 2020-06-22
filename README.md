@@ -55,6 +55,9 @@ See `vignette("setup", package = "goodpress")`.
 
 ## Workflow
 
+The summary is: create your posts in folders as index.Rmd with
+`hugodown::md_document` output format; knit, `wp_post()`, rinse, repeat.
+
   - Create your posts in folders, one folder per post, with index.Rmd
     knitted to index.md and figures under a “figs” folder.
 
@@ -62,7 +65,7 @@ See `vignette("setup", package = "goodpress")`.
 
 ``` r
 fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
-#> /tmp/RtmpJ97MEi/temp_libpath3f882f0a7940/goodpress/post-example2
+#> /home/maelle/R/x86_64-pc-linux-gnu-library/3.6/goodpress/post-example2
 #> ├── chicago-fullnote-bibliography.csl
 #> ├── figs
 #> │   ├── pressure-1.png
@@ -89,12 +92,23 @@ source](https://github.com/maelle/goodpress/tree/main/inst/post-example2).
 Note that it includes citations as footnotes by using the [same strategy
 as hugodown](https://github.com/r-lib/hugodown#citations).
 
-  - The default status of the post is “publish”. If you want another
-    status (status has to be one of: “publish”, “future”, “draft”,
-    “pending”, “private”) , write it in the yaml (and then knit
-    index.Rmd again) e.g.
+### Author
 
-<!-- end list -->
+You can either
+
+  - not write any author in the YAML metadata, and the author will be
+    the authenticated user.
+  - write an existing username which is useful when you are posting or
+    editing on someone else’s behalf.
+
+You cannot create an user with this package, you have to use WordPress
+interface for that.
+
+### Publication status
+
+The default status of the post is “publish”. If you want another status
+(status has to be one of: “publish”, “future”, “draft”, “pending”,
+“private”) , write it in the yaml (and then knit index.Rmd again) e.g.
 
 ``` yaml
 ---
@@ -112,6 +126,53 @@ posts that are visible to admins and editors only. You could create a
 private post, and then from the WordPress interface make it visible with
 password. Make it private again before trying to update the post with
 the R package.
+
+### Tags and categories
+
+You can use tags and categories in th. If a tag or a category doesn’t
+exist `wp_post()` will create it for you.
+
+e.g.
+
+``` yaml
+---
+title: "Title of the Post"
+date: "2020-04-01T00:00:00"
+slug: "post-slug"
+excerpt: "Here I summarize this fantastic post"
+status: "publish"
+output: hugodown::md_document
+categories:
+  - math
+  - code
+tags:
+  - crul
+  - mathjax
+---
+```
+
+Or (if there’s a single category or single tag)
+
+``` yaml
+---
+title: "Another Rmd Blog Post"
+date: "2020-04-01T00:00:00"
+slug: "post-rmd"
+excerpt: "Here I summarize this fantastic post"
+output: hugodown::md_document
+bibliography: refs.bib
+suppress-bibliography: true
+csl: chicago-fullnote-bibliography.csl
+categories: R
+tags:
+  - citation
+  - code
+---
+```
+
+### Technical details
+
+If you’re curious. :-)
 
 The “one post per folder” thing is inspired by Hugo leaf bundles.
 
