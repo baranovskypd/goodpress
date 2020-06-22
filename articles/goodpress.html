@@ -111,6 +111,7 @@
 <div id="workflow" class="section level2">
 <h2 class="hasAnchor">
 <a href="#workflow" class="anchor"></a>Workflow</h2>
+<p>The summary is: create your posts in folders as index.Rmd with <code><a href="https://rdrr.io/pkg/hugodown/man/md_document.html">hugodown::md_document</a></code> output format; knit, <code><a href="../reference/wp_post.html">wp_post()</a></code>, rinse, repeat.</p>
 <ul>
 <li>Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under a “figs” folder.</li>
 </ul>
@@ -131,9 +132,20 @@
 <li>The first time you run <code><a href="../reference/wp_post.html">wp_post()</a></code> for a folder, it creates a file called <code>.wordpress.yml</code> in the post folder, that contains, in particular, the URL and ID of the post on your WordPress website. This way, next time the function is run, the post is <em>updated</em>.</li>
 </ul>
 <p><a href="https://rmd-wordpress.eu/post-rmd/">Example post</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example2">its source</a>. Note that it includes citations as footnotes by using the <a href="https://github.com/r-lib/hugodown#citations">same strategy as hugodown</a>.</p>
+<div id="author" class="section level3">
+<h3 class="hasAnchor">
+<a href="#author" class="anchor"></a>Author</h3>
+<p>You can either</p>
 <ul>
-<li>The default status of the post is “publish”. If you want another status (status has to be one of: “publish”, “future”, “draft”, “pending”, “private”) , write it in the yaml (and then knit index.Rmd again) e.g.</li>
+<li>not write any author in the YAML metadata, and the author will be the authenticated user.</li>
+<li>write an existing username which is useful when you are posting or editing on someone else’s behalf.</li>
 </ul>
+<p>You cannot create an user with this package, you have to use WordPress interface for that.</p>
+</div>
+<div id="publication-status" class="section level3">
+<h3 class="hasAnchor">
+<a href="#publication-status" class="anchor"></a>Publication status</h3>
+<p>The default status of the post is “publish”. If you want another status (status has to be one of: “publish”, “future”, “draft”, “pending”, “private”) , write it in the yaml (and then knit index.Rmd again) e.g.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="pp">---</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
@@ -143,8 +155,49 @@
 <span id="cb3-7"><a href="#cb3-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="pp">---</span></span></code></pre></div>
 <p>The package cannot handle private posts with password, only private posts that are visible to admins and editors only. You could create a private post, and then from the WordPress interface make it visible with password. Make it private again before trying to update the post with the R package.</p>
+</div>
+<div id="tags-and-categories" class="section level3">
+<h3 class="hasAnchor">
+<a href="#tags-and-categories" class="anchor"></a>Tags and categories</h3>
+<p>You can use tags and categories in th. If a tag or a category doesn’t exist <code><a href="../reference/wp_post.html">wp_post()</a></code> will create it for you.</p>
+<p>e.g.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"publish"</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="fu">categories</span><span class="kw">:</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="at">  </span><span class="kw">-</span><span class="at"> math</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> crul</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mathjax</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="pp">---</span></span></code></pre></div>
+<p>Or (if there’s a single category or single tag)</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Another Rmd Blog Post"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-rmd"</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> refs.bib</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">suppress-bibliography</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> chicago-fullnote-bibliography.csl</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> R</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> citation</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div id="technical-details" class="section level3">
+<h3 class="hasAnchor">
+<a href="#technical-details" class="anchor"></a>Technical details</h3>
+<p>If you’re curious. :-)</p>
 <p>The “one post per folder” thing is inspired by Hugo leaf bundles.</p>
 <p>On disk your post is stored as index.Rmd and index.md, but before upload to the WordPress API it is transformed to HTML using <a href="https://pandoc.org/">Pandoc</a>.</p>
+</div>
 </div>
 <div id="motivation" class="section level2">
 <h2 class="hasAnchor">
