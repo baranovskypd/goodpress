@@ -22,6 +22,12 @@ The goal of goodpress is to post to [WordPress](https://wordpress.org/)
 from [R Markdown](https://rmarkdown.rstudio.com/). I need this prototype
 for [a course](https://scientific-rmd-blogging.netlify.app/). 😺
 
+**Limitation**: This package works with WordPress REST API and needs
+your adding an authentication plugin to your WordPress website. You can
+only install plugins on WordPress websites that are either **not** on
+wordpress.com (self-hosted; paid service somewhere) or with a costly
+wordpress.com business plan.
+
 **Important disclaimer**: I don’t use WordPress, so I am not sure you
 should trust me. You are welcome to try out the package (not on
 important stuff, rather in a playground of some sort), to contribute,
@@ -37,88 +43,14 @@ You can install the released version of goodpress from this repository:
 remotes::install_github("maelle/goodpress", ref = "main")
 ```
 
-Then you will need to tweaks things on your website for three aspects
+Then you will need to tweaks things **once** on your website for three
+aspects
 
-  - Authentication (this is *compulsory*)
-  - Syntax highlighting
-  - Math
+  - Authentication (this is **compulsory**)
+  - Syntax highlighting (if you want to show R code in your posts)
+  - Math (if you want to show math in your posts)
 
-You only need to do these *once*, so that’s only potentially painful at
-setup.
-
-You might not need to tweak syntax highlighting and math stuff if you,
-well, never show code or never show math equations in your posts.
-
-### Authentication
-
-From WordPress point-of-view this package is a “remote application”
-therefore it needs your website to use an [authentication
-*plugin*](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#authentication-plugins).
-At the moment, for the sake of simplicity, this package only relies on
-[Application
-Passwords](https://wordpress.org/plugins/application-passwords/).
-
-You cannot install plugins if you use wordpress.com (unless you have a
-costly business plan there), therefore with wordpress.com you cannot use
-the REST API. There are paid services out there providing a domain name,
-hosting and a one-click WordPress install, for a few dollars a month,
-that you could use if you don’t roll your own server.
-
-Here’s what I did to be able to use this package on my [test
-website](https://rmd-wordpress.eu/):
-
-  - Installed and activated the [Application Passwords
-    plugin](https://wordpress.org/plugins/application-passwords/).
-    *Don’t forget to keep your WordPress plugins up-to-date especially
-    because of security updates.*
-  - Created a new user with editor rights, not admin, and from the admin
-    panel I created an application password for “rmarkdown” for that
-    user. *Doing this for an user with restricted access is safer.*
-  - In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`.
-    *Keep `.Renviron` safe, it contains secrets\!*
-  - Edited the [.htaccess file of my
-    website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing).
-
-### Syntax highlighting
-
-#### For R
-
-To get syntax highlighting for R blocks, at the moment you need to add
-custom CSS (once, like the plugin setup stuff).
-
-  - Find `system.file(file.path("css", "code.css"), package =
-    "goodpress")` and copy it to your clipboard.
-  - From your WordPress admin dasbhoard, go to Appearance \> Customize
-    \> Additional CSS. Paste the CSS there and click on publish.
-
-You could edit colors that are in the CSS file.
-
-Later I hope to make this process easier, maybe by adding inline styles.
-
-#### Other languages
-
-I haven’t explored that yet.
-
-### Math
-
-  - Use [MathJax
-    input](https://docs.mathjax.org/en/latest/input/tex/index.html) (can
-    also be MathML)
-  - Customize your theme. From WordPress interface go to Appearance \>
-    Theme Editor. Add the lines below (that come from [MathJax
-    docs](https://www.mathjax.org/#gettingstarted)) to the `<head>` div
-    of `header.php`, then save.
-
-<!-- end list -->
-
-``` html
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-```
-
-See [example post with math](https://rmd-wordpress.eu/post-slug/) and
-[its
-source](https://github.com/maelle/goodpress/tree/main/inst/post-example).
+See `vignette("setup", package = "goodpress")`.
 
 ## Workflow
 

@@ -37,3 +37,4 @@ Suggests:
     vcr,
     testthat,
     covr
+VignetteBuilder: knitr

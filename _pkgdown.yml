@@ -1,1 +1,9 @@
 url: https://maelle.github.io/goodpress/
+
+navbar:
+  structure:
+    left:  [home, setup, reference, news]
+    right: [github]
+  setup:
+     text: "Setup"
+     href: articles/setup.html
