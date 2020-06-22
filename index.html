@@ -75,7 +75,7 @@
 </blockquote>
 <!-- badges: start -->
 <p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> <a href="https://github.com/maelle/goodpress/actions?query=workflow%3AR-CMD-check"><img src="https://github.com/maelle/goodpress/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://codecov.io/gh/maelle/goodpress?branch=main"><img src="https://codecov.io/gh/maelle/goodpress/branch/main/graph/badge.svg" alt="Codecov test coverage"></a> <!-- badges: end --></p>
-<p>The goal of goodpress is to post to <a href="https://wordpress.org/">WordPress</a> from <a href="https://rmarkdown.rstudio.com/">R Markdown</a>. I need this prototype for <a href="https://scientific-rmd-blogging.netlify.app/">a course</a>. :smile_cat:</p>
+<p>The goal of goodpress is to post to <a href="https://wordpress.org/">WordPress</a> from <a href="https://rmarkdown.rstudio.com/">R Markdown</a>. I need this prototype for <a href="https://scientific-rmd-blogging.netlify.app/">a course</a>. 😺</p>
 <p><strong>Important disclaimer</strong>: I don’t use WordPress, so I am not sure you should trust me. You are welcome to try out the package (not on important stuff, rather in a playground of some sort), to contribute, and to volunteer to take over this package/concept. If you write a newer and better R package please tell me about it so I can add a link to it.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -85,6 +85,14 @@
 <span class="co"># install.packages("remotes")</span>
 <span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"maelle/goodpress"</span>, ref = <span class="st">"main"</span>)
 </pre></div>
+<p>Then you will need to tweaks things on your website for three aspects</p>
+<ul>
+<li>Authentication (this is <em>compulsory</em>)</li>
+<li>Syntax highlighting</li>
+<li>Math</li>
+</ul>
+<p>You only need to do these <em>once</em>, so that’s only potentially painful at setup.</p>
+<p>You might not need to tweak syntax highlighting and math stuff if you, well, never show code or never show math equations in your posts.</p>
 <div id="authentication" class="section level3">
 <h3 class="hasAnchor">
 <a href="#authentication" class="anchor"></a>Authentication</h3>
@@ -121,6 +129,17 @@
 <p>I haven’t explored that yet.</p>
 </div>
 </div>
+<div id="math" class="section level3">
+<h3 class="hasAnchor">
+<a href="#math" class="anchor"></a>Math</h3>
+<ul>
+<li>Use <a href="https://docs.mathjax.org/en/latest/input/tex/index.html">MathJax input</a> (can also be MathML)</li>
+<li>Customize your theme. From WordPress interface go to Appearance &gt; Theme Editor. Add the lines below (that come from <a href="https://www.mathjax.org/#gettingstarted">MathJax docs</a>) to the <code>&lt;head&gt;</code> div of <code>header.php</code>, then save.</li>
+</ul>
+<!-- end list --><div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">&lt;script</span><span class="ot"> id=</span><span class="st">"MathJax-script"</span><span class="ot"> async src=</span><span class="st">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<p>See <a href="https://rmd-wordpress.eu/post-slug/">example post with math</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example">its source</a>.</p>
+</div>
 </div>
 <div id="workflow" class="section level2">
 <h2 class="hasAnchor">
@@ -128,7 +147,7 @@
 <ul>
 <li>Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under a “figs” folder.</li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb2"><pre class="downlit">
+<!-- end list --><div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">fs</span>::<span class="fu"><a href="http://fs.r-lib.org/reference/dir_tree.html">dir_tree</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"post-example2"</span>), package = <span class="st">"goodpress"</span>))
 <span class="co">#&gt; /home/maelle/R/x86_64-pc-linux-gnu-library/3.6/goodpress/post-example2</span>
 <span class="co">#&gt; ├── chicago-fullnote-bibliography.csl</span>
@@ -145,6 +164,18 @@
 <li>The first time you run <code><a href="reference/wp_post.html">wp_post()</a></code> in a folder, it creates a file called <code>.wordpress.yml</code> that contains, in particular, the URL and ID of the post on your WordPress website. This way, next time the function is run, the post is <em>updated</em>.</li>
 </ul>
 <p><a href="https://rmd-wordpress.eu/post-rmd/">Example post</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example2">its source</a>. Note that it includes citations as footnotes by using the <a href="https://github.com/r-lib/hugodown#citations">same strategy as hugodown</a>.</p>
+<ul>
+<li>The default status of the post is “publish”. If you want another status (status has to be one of: “publish”, “future”, “draft”, “pending”, “private”) , write it in the yaml (and then knit index.Rmd again) e.g.</li>
+</ul>
+<!-- end list --><div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"private"</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="pp">---</span></span></code></pre></div>
+<p>The package cannot handle private posts with password, only private posts that are visible to admins and editors only. You could create a private post, and then from the WordPress interface make it visible with password. Make it private again before trying to update the post with the R package.</p>
 <p>The “one post per folder” thing is inspired by Hugo leaf bundles.</p>
 <p>On disk your post is stored as index.Rmd and index.md, but before upload to the WordPress API it is transformed to HTML using <a href="https://pandoc.org/">Pandoc</a>.</p>
 </div>
