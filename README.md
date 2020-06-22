@@ -197,8 +197,9 @@ a WordPress blog](https://github.com/mAAdhaTTah/wordpress-github-sync/)
 [its source](https://github.com/ThinkR-open/abcdR)) but it doesn’t
 handle media. If you use a GitHub repo:
 
-  - You could set up something like a GitHub Action that’d interact with
-    WordPress REST API each time you push to the default branch.
+  - You could set up something like a GitHub Action workflow that’d
+    interact with WordPress REST API each time you push to the default
+    branch.
   - Are you still sure you don’t want to use a [static website generator
     instead](https://gohugo.io/tools/migrations/)? :wink: More
     seriously, I am interested in blogging workflows so feel free to

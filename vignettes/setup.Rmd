@@ -32,7 +32,7 @@ Here's what I did to be able to use this package on my [test website](https://rm
 
 * Installed and activated the [Application Passwords plugin](https://wordpress.org/plugins/application-passwords/). _Don't forget to keep your WordPress plugins up-to-date especially because of security updates._
 * Created a new user with editor rights, not admin, and from the admin panel I created an application password for "rmarkdown" for that user. _Doing this for an user with restricted access is safer._
-* In `.Renviron`, save username as `WP_USER` and password as `WP_PWD`. _Keep `.Renviron` safe, it contains secrets!_
+* In [`.Renviron`](https://rstats.wtf/r-startup.html#renviron), save username as `WP_USER` and password as `WP_PWD`. _Keep `.Renviron` safe, it contains secrets!_
 * Edited the [.htaccess file of my website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing).
 
 ## Syntax highlighting
