@@ -28,8 +28,6 @@
 #' }
 wp_post <- function(post_folder, wordpress_url) {
 
-
-
    path <- file.path(post_folder, "index.md")
    wordpress_meta_path <- file.path(post_folder, ".wordpress.yml")
 
@@ -51,6 +49,10 @@ wp_post <- function(post_folder, wordpress_url) {
    file.remove(html_path)
 
    meta <- rmarkdown::yaml_front_matter(path)
+
+   if (!is.null(meta$categories)) {
+     categories <- wp_handle_categories(meta$categories, wordpress_url)$id
+   }
 
    post_list <- list( 'date' = meta$date,
                       'title' = meta$title,
@@ -211,4 +213,42 @@ wp_upload_media <- function(media_path, wordpress_url, post_id) {
               filename = basename(media_path))
 
   return(img$media_details$sizes$full$source_url)
+}
+
+wp_handle_categories <- function(categories, wordpress_url) {
+
+  # list existing categories
+
+  online_categories <- wp_call_api(
+    VERB = "GET",
+    api_url = paste0(wordpress_url, "/wp-json/wp/v2/categories")
+    )
+
+  online_categories_df <- data.frame(
+    id = purrr::map_chr(online_categories, "id"),
+    name = purrr::map_chr(online_categories, "name"),
+    stringsAsFactors = FALSE
+  )
+
+  # If needed create categories
+  offline_categories <- categories[!categories %in% online_categories_df$name]
+
+  if (length(offline_categories) > 0) {
+    for(category in offline_categories) {
+
+      new_category <- wp_call_api(
+        VERB = "POST",
+        api_url = paste0(wordpress_url, "/wp-json/wp/v2/categories?name=", category)
+      )
+    online_categories_df <- rbind(
+      online_categories_df,
+      data.frame(id = new_category$id, name = new_category$name,
+                 stringsAsFactors = FALSE)
+    )
+    }
+  }
+
+  # return categories names and ids
+  browser()
+
 }

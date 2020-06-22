@@ -5,7 +5,13 @@ slug: "post-slug"
 excerpt: "Here I summarize this fantastic post"
 status: "publish"
 output: hugodown::md_document
-rmd_hash: b702c045bfd24741
+categories:
+  - math
+  - code
+tags:
+  - crul
+  - mathjax
+rmd_hash: b2d0936d388dca6b
 
 ---
 
