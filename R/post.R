@@ -58,6 +58,10 @@ wp_post <- function(post_folder, wordpress_url) {
     meta$tags, wordpress_url
   )
 
+  author <- wp_handle_author(
+    meta$author, wordpress_url
+  )
+
    post_list <- list( 'date' = meta$date,
                       'title' = meta$title,
                       'slug' = meta$slug %||% NULL,
@@ -68,9 +72,12 @@ wp_post <- function(post_folder, wordpress_url) {
                       'excerpt' = meta$excerpt %||% NULL,
                       'format' = meta$format %||% 'standard',
                       'categories' = categories,
-                      'tags' = tags,
-                      'author' = meta$author %||% NULL
+                      'tags' = tags
                       )
+
+   if (!is.null(author)) {
+     post_list$author <- author
+   }
 
    post <- jsonlite::toJSON(
      post_list,
@@ -305,5 +312,32 @@ wp_handle_tags <- function(tags, wordpress_url) {
 
   # return tags IDs
   online_tags_df$id[online_tags_df$name %in% tags]
+
+}
+
+wp_handle_author <- function(author, wordpress_url) {
+
+  if (is.null(author)) {
+    return(NULL)
+  }
+
+  # list existing authors
+
+  online_authors <- wp_call_api(
+    VERB = "GET",
+    api_url = paste0(wordpress_url, "/wp-json/wp/v2/users")
+  )
+
+  online_authors_df <- data.frame(
+    id = purrr::map_chr(online_authors, "id"),
+    name = purrr::map_chr(online_authors, "name"),
+    stringsAsFactors = FALSE
+  )
+
+  if (!author %in% online_authors_df$name) {
+    stop(paste(author, "is not an existing user name."))
+  }
+
+  online_authors_df$id[online_authors_df$name == author]
 
 }

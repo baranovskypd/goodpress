@@ -12,6 +12,15 @@ fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
 
 [Example post](https://rmd-wordpress.eu/post-rmd/) and [its source](https://github.com/maelle/goodpress/tree/main/inst/post-example2). Note that it includes citations as footnotes by using the [same strategy as hugodown](https://github.com/r-lib/hugodown#citations).
 
+### Author
+
+You can either
+
+* not write any author in the YAML metadata, and the author will be the authenticated user.
+* write an existing username which is useful when you are posting or editing on someone else's behalf.
+
+You cannot create an user with this package, you have to use WordPress interface for that.
+
 ### Publication status
 
 The default status of the post is "publish". If you want another status (status has to be one of: "publish", "future", "draft", "pending", "private") , write it in the yaml (and then knit index.Rmd again) e.g.
