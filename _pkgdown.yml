@@ -16,3 +16,7 @@ navbar:
     twitter:
      icon: "fab fa-twitter fa-lg"
      href: http://twitter.com/ma_salmon
+
+template:
+  params:
+    bootswatch: united
