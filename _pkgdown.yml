@@ -20,3 +20,7 @@ navbar:
 template:
   params:
     bootswatch: united
+
+authors:
+  Maëlle Salmon:
+    href: https://masalmon.eu
