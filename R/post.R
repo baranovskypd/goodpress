@@ -1,11 +1,36 @@
 #' Post a post to Wordpress
 #'
-#' @param post_folder Path to folder where the post (index.Rmd, index.md, images)
+#' @param post_folder Path to folder where the post
+#' (index.Rmd with `hugodown::md_document` output format,
+#' index.md, images)
 #' lives
 #' @param wordpress_url URL to your website
 #'
-#' @details To set the status of the post (One of: "publish", "future", "draft",
-#'  "pending", "private") use a YAML field e.g. `status: "draft"`.
+#' @details Several aspects of the post can be controlled by the YAML of index.Rmd.
+#' ```yaml
+#' ---
+#' title: "Title of the Post" # compulsory!
+#' date: "2020-04-01T00:00:00" # compulsory!
+#' author: "admin7891" # Either omit the field (the author will be
+#' #  the authenticated user) or use an username
+#' slug: "post-slug" # Important especially if the slug is in the URL
+#' excerpt: "Here I summarize this fantastic post"
+#' status: "publish" # One of: "publish", "future", "draft",
+#' #  "pending", "private"; "publish" by default
+#' output: hugodown::md_document # Don't change this
+#' categories: # Categories, optional, will be created if
+#' # the post is the first with the category
+#'   - math
+#' - Code and Stuff
+#' tags: # Tags, optional, will be created if
+#' # the post is the first with the tag
+#'   - crul
+#'   - mathjax
+#'   - R packages
+#' comment_status: closed # Either closed (default) or open
+#' ping_status: closed # Either closed (default) or open
+#' ---
+#' ```
 #'
 #'  The package cannot handle private posts with password, only private posts that
 #'   are visible to admins and editors only. You could create a private post, and
@@ -70,7 +95,8 @@ wp_post <- function(post_folder, wordpress_url) {
                       'status' = 'draft',
                       'content' = body,
                       'excerpt' = meta$excerpt %||% NULL,
-                      'format' = meta$format %||% 'standard',
+                      'format' = 'standard',
+                      'template' = meta$template %||% NULL,
                       'categories' = categories,
                       'tags' = tags
                       )

@@ -13,7 +13,9 @@ tags:
   - crul
   - mathjax
   - R packages
-rmd_hash: ca282ba2fa827620
+comment_status: open
+ping_status: open
+rmd_hash: 31d058d6817f2dc2
 
 ---
 
@@ -40,7 +42,10 @@ When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
 
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
-$$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}} $$ \#\# Include images not generated in R
+$$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}} $$
+
+Include images not generated in R
+---------------------------------
 
 <div class="highlight">
 

@@ -92,6 +92,17 @@ source](https://github.com/maelle/goodpress/tree/main/inst/post-example2).
 Note that it includes citations as footnotes by using the [same strategy
 as hugodown](https://github.com/r-lib/hugodown#citations).
 
+### Images and figures
+
+  - For plots generated via R, just use R Markdown as you normally
+    would.
+
+  - For images not generated from R code, save them in the `figs`
+    subfolder and use `knitr::include_graphics()` to include them. See
+    [example post with a cat
+    picture](https://rmd-wordpress.eu/post-slug/) and [its
+    source](https://github.com/maelle/goodpress/tree/main/inst/post-example).
+
 ### Author
 
 You can either
@@ -172,11 +183,31 @@ tags:
 ---
 ```
 
+### Math with MathJax
+
+First, add [MathJax JS script to your
+website](https://maelle.github.io/goodpress/articles/setup.html#math-1),
+**once**.
+
+In every post where you want to use math, use [MathJax
+input](https://docs.mathjax.org/en/latest/input/tex/index.html) (MathML,
+LaTeX). After formulas put a few empty lines.
+
+See [example post with math](https://rmd-wordpress.eu/post-slug/) and
+[its
+source](https://github.com/maelle/goodpress/tree/main/inst/post-example).
+
 ### Technical details
 
-If you’re curious. :-)
+If you’re curious. 🙂
 
-The “one post per folder” thing is inspired by Hugo leaf bundles.
+The “one post per folder” thing is inspired by [Hugo leaf
+bundles](https://gohugo.io/content-management/page-bundles/).
+
+At the moment this package uses the very handy
+\[`hugodown](https://hugodown.r-lib.org/)`’s R Markdown output format
+which allows using `downlit` for R syntax highlighting without my having
+to think too much.
 
 On disk your post is stored as index.Rmd and index.md, but before upload
 to the WordPress API it is transformed to HTML using
