@@ -139,7 +139,9 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>post_folder</th>
-      <td><p>Path to folder where the post (index.Rmd, index.md, images)
+      <td><p>Path to folder where the post
+(index.Rmd with <code><a href='https://rdrr.io/pkg/hugodown/man/md_document.html'>hugodown::md_document</a></code> output format,
+index.md, images)
 lives</p></td>
     </tr>
     <tr>
@@ -153,8 +155,29 @@ lives</p></td>
     <p>URL to the post (invisibly)</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>To set the status of the post (One of: "publish", "future", "draft",
-"pending", "private") use a YAML field e.g. <code>status: "draft"</code>.</p>
+    <p>Several aspects of the post can be controlled by the YAML of index.Rmd.<div class="yaml"></p><pre>---
+title: "Title of the Post" # compulsory!
+date: "2020-04-01T00:00:00" # compulsory!
+author: "admin7891" # Either omit the field (the author will be
+#  the authenticated user) or use an username
+slug: "post-slug" # Important especially if the slug is in the URL
+excerpt: "Here I summarize this fantastic post"
+status: "publish" # One of: "publish", "future", "draft",
+#  "pending", "private"; "publish" by default
+output: hugodown::md_document # Don't change this
+categories: # Categories, optional, will be created if
+# the post is the first with the category
+  - math
+- Code and Stuff
+tags: # Tags, optional, will be created if
+# the post is the first with the tag
+  - crul
+  - mathjax
+  - R packages
+comment_status: closed # Either closed (default) or open
+ping_status: closed # Either closed (default) or open
+---
+</pre><p></div></p>
 <p>The package cannot handle private posts with password, only private posts that
 are visible to admins and editors only. You could create a private post, and
 then from the WordPress interface make it visible with password. Make it private again

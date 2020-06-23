@@ -133,6 +133,14 @@
 <li>The first time you run <code><a href="reference/wp_post.html">wp_post()</a></code> for a folder, it creates a file called <code>.wordpress.yml</code> in the post folder, that contains, in particular, the URL and ID of the post on your WordPress website. This way, next time the function is run, the post is <em>updated</em>.</li>
 </ul>
 <p><a href="https://rmd-wordpress.eu/post-rmd/">Example post</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example2">its source</a>. Note that it includes citations as footnotes by using the <a href="https://github.com/r-lib/hugodown#citations">same strategy as hugodown</a>.</p>
+<div id="images-and-figures" class="section level3">
+<h3 class="hasAnchor">
+<a href="#images-and-figures" class="anchor"></a>Images and figures</h3>
+<ul>
+<li><p>For plots generated via R, just use R Markdown as you normally would.</p></li>
+<li><p>For images not generated from R code, save them in the <code>figs</code> subfolder and use <code><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">knitr::include_graphics()</a></code> to include them. See <a href="https://rmd-wordpress.eu/post-slug/">example post with a cat picture</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example">its source</a>.</p></li>
+</ul>
+</div>
 <div id="author" class="section level3">
 <h3 class="hasAnchor">
 <a href="#author" class="anchor"></a>Author</h3>
@@ -193,11 +201,19 @@
 <span id="cb5-13"><a href="#cb5-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
 <span id="cb5-14"><a href="#cb5-14"></a><span class="pp">---</span></span></code></pre></div>
 </div>
+<div id="math-with-mathjax" class="section level3">
+<h3 class="hasAnchor">
+<a href="#math-with-mathjax" class="anchor"></a>Math with MathJax</h3>
+<p>First, add <a href="https://maelle.github.io/goodpress/articles/setup.html#math-1">MathJax JS script to your website</a>, <strong>once</strong>.</p>
+<p>In every post where you want to use math, use <a href="https://docs.mathjax.org/en/latest/input/tex/index.html">MathJax input</a> (MathML, LaTeX). After formulas put a few empty lines.</p>
+<p>See <a href="https://rmd-wordpress.eu/post-slug/">example post with math</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example">its source</a>.</p>
+</div>
 <div id="technical-details" class="section level3">
 <h3 class="hasAnchor">
 <a href="#technical-details" class="anchor"></a>Technical details</h3>
-<p>If you’re curious. :-)</p>
-<p>The “one post per folder” thing is inspired by Hugo leaf bundles.</p>
+<p>If you’re curious. 🙂</p>
+<p>The “one post per folder” thing is inspired by <a href="https://gohugo.io/content-management/page-bundles/">Hugo leaf bundles</a>.</p>
+<p>At the moment this package uses the very handy [<code>hugodown](https://hugodown.r-lib.org/)</code>’s R Markdown output format which allows using <code>downlit</code> for R syntax highlighting without my having to think too much.</p>
 <p>On disk your post is stored as index.Rmd and index.md, but before upload to the WordPress API it is transformed to HTML using <a href="https://pandoc.org/">Pandoc</a>.</p>
 </div>
 </div>
