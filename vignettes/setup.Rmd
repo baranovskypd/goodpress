@@ -64,4 +64,4 @@ Add the lines below (that come from [MathJax docs](https://www.mathjax.org/#gett
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 ```
 
-Then refer to [the usage vignette](https://maelle.github.io/goodpress/docs/articles/goodpress.html#math-with-mathjax).
+Then refer to [the usage vignette](https://maelle.github.io/goodpress/articles/goodpress.html#math-with-mathjax).
