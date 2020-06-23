@@ -205,7 +205,7 @@ The “one post per folder” thing is inspired by [Hugo leaf
 bundles](https://gohugo.io/content-management/page-bundles/).
 
 At the moment this package uses the very handy
-\[`hugodown](https://hugodown.r-lib.org/)`’s R Markdown output format
+[`hugodown`](https://hugodown.r-lib.org/)’s R Markdown output format
 which allows using `downlit` for R syntax highlighting without my having
 to think too much.
 
@@ -234,6 +234,6 @@ handle media. If you use a GitHub repo:
     interact with WordPress REST API each time you push to the default
     branch.
   - Are you still sure you don’t want to use a [static website generator
-    instead](https://gohugo.io/tools/migrations/)? :wink: More
-    seriously, I am interested in blogging workflows so feel free to
-    tell me why and how you use WordPress (in an issue for instance).
+    instead](https://gohugo.io/tools/migrations/)? 😉 More seriously, I
+    am interested in blogging workflows so feel free to tell me why and
+    how you use WordPress (in an issue for instance).

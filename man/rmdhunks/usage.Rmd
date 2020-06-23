@@ -102,6 +102,6 @@ If you're curious. 🙂
 
 The "one post per folder" thing is inspired by [Hugo leaf bundles](https://gohugo.io/content-management/page-bundles/). 
 
-At the moment this package uses the very handy [`hugodown](https://hugodown.r-lib.org/)`'s R Markdown output format which allows using `downlit` for R syntax highlighting without my having to think too much.
+At the moment this package uses the very handy [`hugodown`](https://hugodown.r-lib.org/)'s R Markdown output format which allows using `downlit` for R syntax highlighting without my having to think too much.
 
 On disk your post is stored as index.Rmd and index.md, but before upload to the WordPress API it is transformed to HTML using [Pandoc](https://pandoc.org/).
