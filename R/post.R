@@ -258,7 +258,11 @@ wp_handle_categories <- function(categories, wordpress_url) {
 
       new_category <- wp_call_api(
         VERB = "POST",
-        api_url = paste0(wordpress_url, "/wp-json/wp/v2/categories?name=", category)
+        api_url = paste0(
+          wordpress_url,
+          "/wp-json/wp/v2/categories?name=",
+          utils::URLencode(category)
+          )
       )
     online_categories_df <- rbind(
       online_categories_df,
@@ -300,7 +304,11 @@ wp_handle_tags <- function(tags, wordpress_url) {
 
       new_tag <- wp_call_api(
         VERB = "POST",
-        api_url = paste0(wordpress_url, "/wp-json/wp/v2/tags?name=", tag)
+        api_url = paste0(
+          wordpress_url,
+          "/wp-json/wp/v2/tags?name=",
+          utils::URLencode(tag)
+          )
       )
       online_tags_df <- rbind(
         online_tags_df,

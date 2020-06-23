@@ -10,11 +10,11 @@ Authors@R:
 Description: Helps you write from R Markdown to Wordpress
     directly.
 License: MIT + file LICENSE
-URL: https://maelle.github.io/goodpress/, https://github.com/maelle/goodpress
+URL: https://maelle.github.io/goodpress/,
+    https://github.com/maelle/goodpress
 BugReports: https://github.com/maelle/goodpress/issues
 Imports: 
     glue,
-    withr,
     httr,
     hugodown,
     jsonlite,
@@ -24,18 +24,21 @@ Imports:
     purrr,
     rmarkdown,
     tibble,
-    yaml,
-    xml2
+    utils,
+    withr,
+    xml2,
+    yaml
+Suggests: 
+    covr,
+    fs,
+    testthat,
+    vcr
+VignetteBuilder: 
+    knitr
+Remotes:
+    r-lib/hugodown,
+    ropensci/vcr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2
-Remotes:
-    r-lib/hugodown,
-    ropensci/vcr
-Suggests: 
-    vcr,
-    testthat,
-    covr,
-    fs
-VignetteBuilder: knitr

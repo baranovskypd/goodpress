@@ -8,10 +8,11 @@ status: "publish"
 output: hugodown::md_document
 categories:
   - math
-  - code
+  - Code and Stuff
 tags:
   - crul
   - mathjax
+  - R packages
 ---
 
 ```{r setup, include=FALSE}

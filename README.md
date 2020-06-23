@@ -129,8 +129,9 @@ the R package.
 
 ### Tags and categories
 
-You can use tags and categories in th. If a tag or a category doesn’t
-exist `wp_post()` will create it for you.
+You can use tags and categories in the YAML metadata of index.Rmd
+(rendered to index.md). If a tag or a category doesn’t exist `wp_post()`
+will create it for you.
 
 e.g.
 
@@ -148,6 +149,7 @@ categories:
 tags:
   - crul
   - mathjax
+  - R packages
 ---
 ```
 
