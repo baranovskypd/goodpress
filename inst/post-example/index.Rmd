@@ -39,3 +39,8 @@ When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
 $$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}} $$
+## Include images not generated in R
+
+```{r cat, fig.cap="A cat playing with a plant, picture by Dimitri Houtteman on Unspash"}
+knitr::include_graphics(file.path("figs", "dimitri-houtteman-93AcQpzcASE-unsplash.jpg"))
+```
