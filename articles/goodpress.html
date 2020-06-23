@@ -159,7 +159,7 @@
 <div id="tags-and-categories" class="section level3">
 <h3 class="hasAnchor">
 <a href="#tags-and-categories" class="anchor"></a>Tags and categories</h3>
-<p>You can use tags and categories in th. If a tag or a category doesn’t exist <code><a href="../reference/wp_post.html">wp_post()</a></code> will create it for you.</p>
+<p>You can use tags and categories in the YAML metadata of index.Rmd (rendered to index.md). If a tag or a category doesn’t exist <code><a href="../reference/wp_post.html">wp_post()</a></code> will create it for you.</p>
 <p>e.g.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
@@ -174,7 +174,8 @@
 <span id="cb4-11"><a href="#cb4-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
 <span id="cb4-12"><a href="#cb4-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> crul</span></span>
 <span id="cb4-13"><a href="#cb4-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mathjax</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="pp">---</span></span></code></pre></div>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="at">  </span><span class="kw">-</span><span class="at"> R packages</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="pp">---</span></span></code></pre></div>
 <p>Or (if there’s a single category or single tag)</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Another Rmd Blog Post"</span></span>
@@ -205,7 +206,7 @@
 <p>The current best tool for writing from R Markdown to WordPress, <a href="https://tobiasdienlin.com/2019/03/08/how-to-publish-a-blog-post-on-wordpress-using-rmarkdown/"><code>knitr::knit2wp()</code></a>, relies on a package that hasn’t been updated in years and that depends on the no longer recommended <a href="https://frie.codes/curl-vs-rcurl/"><code>RCurl</code></a> and <code>XML</code>. In the meantime, WordPress gained a <a href="https://developer.wordpress.org/rest-api/">REST API</a> that to my knowledge isn’t wrapped in any <a href="https://github.com/jaredlander/wordpressr">working R package</a>.</p>
 <p>There is also the solution to <a href="https://github.com/mAAdhaTTah/wordpress-github-sync/">use a plug-in to sync a GitHub repo with a WordPress blog</a> (see <a href="https://abcdr.thinkr.fr/soumettre-un-article/">this website</a> and <a href="https://github.com/ThinkR-open/abcdR">its source</a>) but it doesn’t handle media. If you use a GitHub repo:</p>
 <ul>
-<li>You could set up something like a GitHub Action that’d interact with WordPress REST API each time you push to the default branch.</li>
+<li>You could set up something like a GitHub Action workflow that’d interact with WordPress REST API each time you push to the default branch.</li>
 <li>Are you still sure you don’t want to use a <a href="https://gohugo.io/tools/migrations/">static website generator instead</a>? :wink: More seriously, I am interested in blogging workflows so feel free to tell me why and how you use WordPress (in an issue for instance).</li>
 </ul>
 </div>
@@ -222,7 +223,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Maëlle Salmon.</p>
+  <p>Developed by <a href="https://masalmon.eu">Maëlle Salmon</a>.</p>
 </div>
 
 <div class="pkgdown">
