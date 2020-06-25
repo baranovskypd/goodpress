@@ -53,6 +53,13 @@
 #' }
 wp_post <- function(post_folder, wordpress_url) {
 
+   if(!(nzchar(Sys.getenv("WP_USER")) && nzchar(Sys.getenv("WP_PWD")))) {
+     stop("The environment variables WP_USER (username) and WP_PWD (application password) have not been set correctly in .Renviron.
+Refer to https://maelle.github.io/goodpress/articles/setup.html
+Use usethis::edit_r_environ() for instance.
+Or maybe you forgot to re-start R after editing .Renviron?")
+   }
+
    path <- file.path(post_folder, "index.md")
    wordpress_meta_path <- file.path(post_folder, ".wordpress.yml")
 
