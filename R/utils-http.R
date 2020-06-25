@@ -15,17 +15,23 @@ wp_call_api <- function(VERB, api_url, body = NULL,
                                url = api_url,
                                httr::add_headers(
                                  Authorization = token,
-                                 "Content-Disposition"=paste0('form-data; filename="', filename, '"')),
+                                 "Content-Disposition"= paste0(
+                                   'form-data; filename="',
+                                   filename, '"'
+                                   )
+                                 ),
                                body = body)
+
   } else {
+
     api_response <- httr::VERB(verb = VERB,
                                url = api_url,
-                               httr::add_headers(Authorization = token,
-                                                 "Content-Type"="application/json"),
+                               httr::add_headers(
+                                 Authorization = token,
+                                 "Content-Type"="application/json"
+                                 ),
                                body = body)
   }
-
-
 
   httr::stop_for_status(api_response)
 
