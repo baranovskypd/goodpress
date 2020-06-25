@@ -105,8 +105,11 @@
 </li>
 <li>Created a new user with editor rights, not admin, and from the admin panel I created an application password for “rmarkdown” for that user. <em>Doing this for an user with restricted access is safer.</em>
 </li>
-<li>In <a href="https://rstats.wtf/r-startup.html#renviron"><code>.Renviron</code></a>, save username as <code>WP_USER</code> and password as <code>WP_PWD</code>. <em>Keep <code>.Renviron</code> safe, it contains secrets!</em>
-</li>
+<li>In <a href="https://rstats.wtf/r-startup.html#renviron"><code>.Renviron</code></a>, save username as <code>WP_USER</code> and application password as <code>WP_PWD</code>. Re-start R. <em>Keep <code>.Renviron</code> safe, it contains secrets!</em> Here’s an example of .Renviron below, the empty line at the end of the file is needed.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="at">WP_PWD="your application password including space e.g. blabla blabla blabla blabla NOT your WordPress main password"</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="at">WP_USER="yourusername"</span></span></code></pre></div>
+<ul>
 <li>Edited the <a href="https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing">.htaccess file of my website</a>.</li>
 </ul>
 </div>
@@ -135,8 +138,8 @@
 <a href="#math" class="anchor"></a>Math</h2>
 <p>To be able to use math with MathJax, you’ll need to customize your theme.</p>
 <p>From WordPress interface go to Appearance &gt; Theme Editor. Add the lines below (that come from <a href="https://www.mathjax.org/#gettingstarted">MathJax docs</a>) to the <code>&lt;head&gt;</code> div of <code>header.php</code>, then save.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">&lt;script</span><span class="ot"> id=</span><span class="st">"MathJax-script"</span><span class="ot"> async src=</span><span class="st">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">&lt;script</span><span class="ot"> id=</span><span class="st">"MathJax-script"</span><span class="ot"> async src=</span><span class="st">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
 <p>Then refer to <a href="https://maelle.github.io/goodpress/articles/goodpress.html#math-with-mathjax">the usage vignette</a>.</p>
 </div>
   </div>
