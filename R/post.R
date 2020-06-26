@@ -264,50 +264,46 @@ wp_upload_media <- function(media_path, wordpress_url, post_id) {
   return(img$media_details$sizes$full$source_url)
 }
 
-wp_handle_categories <- function(categories, wordpress_url) {
+wp_get_taxo_id <- function(term, taxo, wordpress_url) {
 
-  if (is.null(categories)) {
-    return(NULL)
-  }
+  # does the term already exist
+  api_url <- httr::modify_url(wordpress_url,
+                              path = paste0("/wp-json/wp/v2/", taxo),
+                              query = list("per_page" = 100,
+                                        "search" = term))
 
-  # list existing categories
-
-  online_categories <- wp_call_api(
+  online_terms <- wp_call_api(
     VERB = "GET",
-    api_url = paste0(wordpress_url, "/wp-json/wp/v2/categories")
-    )
+    api_url = api_url
+  )
 
-  online_categories_df <- data.frame(
-    id = purrr::map_chr(online_categories, "id"),
-    name = purrr::map_chr(online_categories, "name"),
+  online_terms_df <- data.frame(
+    id = purrr::map_chr(online_terms, "id"),
+    name = purrr::map_chr(online_terms, "name"),
     stringsAsFactors = FALSE
   )
 
-  # If needed create categories
-  offline_categories <- categories[!categories %in% online_categories_df$name]
+  # if not create it
+  if (! term %in% online_terms_df$name) {
 
-  if (length(offline_categories) > 0) {
-    for(category in offline_categories) {
-
-      new_category <- wp_call_api(
-        VERB = "POST",
-        api_url = paste0(
-          wordpress_url,
-          "/wp-json/wp/v2/categories?name=",
-          utils::URLencode(category)
-          )
+    new_term <- wp_call_api(
+      VERB = "POST",
+      api_url = httr::modify_url(
+        wordpress_url,
+        path = paste0("/wp-json/wp/v2/", taxo),
+        query = list(name = term)
       )
-    online_categories_df <- rbind(
-      online_categories_df,
-      data.frame(id = new_category$id, name = new_category$name,
+    )
+    online_terms_df <- rbind(
+      online_terms_df,
+      data.frame(id = new_term$id, name = new_term$name,
                  stringsAsFactors = FALSE)
     )
-    }
   }
 
-  # return categories IDs
-  online_categories_df$id[online_categories_df$name %in% categories]
-
+  as.character(
+    online_terms_df$id[online_terms_df$name == term]
+  )
 }
 
 wp_handle_tags <- function(tags, wordpress_url) {
@@ -316,43 +312,27 @@ wp_handle_tags <- function(tags, wordpress_url) {
     return(NULL)
   }
 
-  # list existing tags
+  purrr::map_chr(
+    tags,
+    wp_get_taxo_id,
+    taxo = "tags",
+    wordpress_url =
+      wordpress_url)
 
-  online_tags <- wp_call_api(
-    VERB = "GET",
-    api_url = paste0(wordpress_url, "/wp-json/wp/v2/tags?per_page=100")
-  )
+}
 
-  online_tags_df <- data.frame(
-    id = purrr::map_chr(online_tags, "id"),
-    name = purrr::map_chr(online_tags, "name"),
-    stringsAsFactors = FALSE
-  )
+wp_handle_categories <- function(categories, wordpress_url) {
 
-  # If needed create tags
-  offline_tags <- tags[!tags %in% online_tags_df$name]
-
-  if (length(offline_tags) > 0) {
-    for(tag in offline_tags) {
-
-      new_tag <- wp_call_api(
-        VERB = "POST",
-        api_url = paste0(
-          wordpress_url,
-          "/wp-json/wp/v2/tags?name=",
-          utils::URLencode(tag)
-          )
-      )
-      online_tags_df <- rbind(
-        online_tags_df,
-        data.frame(id = new_tag$id, name = new_tag$name,
-                   stringsAsFactors = FALSE)
-      )
-    }
+  if (is.null(categories)) {
+    return(NULL)
   }
 
-  # return tags IDs
-  online_tags_df$id[online_tags_df$name %in% tags]
+  purrr::map_chr(
+    categories,
+    wp_get_taxo_id,
+    taxo = "categories",
+    wordpress_url =
+      wordpress_url)
 
 }
 

@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/categories
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/categories?per_page=100&search=R
     body:
       encoding: ''
       string: ''
@@ -16,7 +16,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:43 GMT
+      date: Fri, 26 Jun 2020 13:50:05 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -29,23 +29,22 @@ http_interactions:
       access-control-allow-headers: Authorization, Content-Type
       expires: Wed, 11 Jan 1984 05:00:00 GMT
       cache-control: no-cache, must-revalidate, max-age=0
-      x-wp-total: '7'
+      x-wp-total: '4'
       x-wp-totalpages: '1'
       allow: GET, POST
-      x-iplb-instance: '32681'
-      set-cookie: SERVERID112363=2820121|XvW0j|XvW0j; path=/
+      x-iplb-instance: '32682'
+      set-cookie: SERVERID112363=282122|XvX9E|XvX9E; path=/
     body:
       encoding: UTF-8
       file: no
-      string: '[{"id":7,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/code\/","name":"code","slug":"code","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/7"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=7"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":14,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/code-and-stuff\/","name":"Code
-        and Stuff","slug":"code-and-stuff","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/14"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=14"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":6,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/math\/","name":"math","slug":"math","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/6"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=6"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":15,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/newcat\/","name":"newcat","slug":"newcat","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/15"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=15"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":1,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/non-classe\/","name":"Non
-        class\u00e9","slug":"non-classe","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/1"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=1"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":10,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r\/","name":"R","slug":"r","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/10"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=10"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":16,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r-programming\/","name":"R
+      string: '[{"id":21,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/code-and-other-stuff\/","name":"Code
+        and Other Stuff","slug":"code-and-other-stuff","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/21"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=21"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":20,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/codeandotherstuff\/","name":"CodeandOtherStuff","slug":"codeandotherstuff","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/20"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=20"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":10,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r\/","name":"R","slug":"r","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/10"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=10"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":16,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r-programming\/","name":"R
         Programming","slug":"r-programming","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/16"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=16"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
-  recorded_at: 2020-06-26 08:40:48 GMT
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: get
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/tags?per_page=100
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/tags?per_page=100&search=citation
     body:
       encoding: ''
       string: ''
@@ -60,7 +59,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:43 GMT
+      date: Fri, 26 Jun 2020 13:50:06 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -73,17 +72,55 @@ http_interactions:
       access-control-allow-headers: Authorization, Content-Type
       expires: Wed, 11 Jan 1984 05:00:00 GMT
       cache-control: no-cache, must-revalidate, max-age=0
-      x-wp-total: '8'
+      x-wp-total: '1'
+      x-wp-totalpages: '1'
+      allow: GET, POST
+      x-iplb-instance: '32684'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '[{"id":11,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/citation\/","name":"citation","slug":"citation","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/11"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=11"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
+  recorded_at: 2020-06-26 13:50:10 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
+- request:
+    method: get
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/tags?per_page=100&search=code
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Basic bWFlbGxlLW5vdC1hZG1pbjo3M1pPIEpnUTUgOVdsUSA3am51IFJBMlggeWRQeA==
+      Content-Type: application/json
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 26 Jun 2020 13:50:06 GMT
+      content-type: application/json; charset=UTF-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/7.2
+      x-robots-tag: noindex
+      link: <https://rmd-wordpress.eu/wp-json/>; rel="https://api.w.org/"
+      x-content-type-options: nosniff
+      access-control-expose-headers: X-WP-Total, X-WP-TotalPages
+      access-control-allow-headers: Authorization, Content-Type
+      expires: Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control: no-cache, must-revalidate, max-age=0
+      x-wp-total: '1'
       x-wp-totalpages: '1'
       allow: GET, POST
       x-iplb-instance: '32683'
     body:
       encoding: UTF-8
       file: no
-      string: '[{"id":11,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/citation\/","name":"citation","slug":"citation","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/11"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=11"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":12,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/code\/","name":"code","slug":"code","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/12"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=12"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":8,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/crul\/","name":"crul","slug":"crul","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/8"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=8"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":18,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/goodpress\/","name":"goodpress","slug":"goodpress","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/18"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=18"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":9,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/mathjax\/","name":"mathjax","slug":"mathjax","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/9"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=9"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":17,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/r-markdown\/","name":"R
-        Markdown","slug":"r-markdown","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/17"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=17"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":13,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/r-packages\/","name":"R
-        packages","slug":"r-packages","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/13"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=13"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":19,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/wordpress\/","name":"WordPress","slug":"wordpress","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/19"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=19"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
-  recorded_at: 2020-06-26 08:40:48 GMT
+      string: '[{"id":12,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/code\/","name":"code","slug":"code","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/12"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=12"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: post
@@ -140,7 +177,7 @@ http_interactions:
       reason: Created
       message: 'Success: (201) Created'
     headers:
-      date: Fri, 26 Jun 2020 08:40:44 GMT
+      date: Fri, 26 Jun 2020 13:50:06 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -154,12 +191,12 @@ http_interactions:
       expires: Wed, 11 Jan 1984 05:00:00 GMT
       cache-control: no-cache, must-revalidate, max-age=0
       allow: GET, POST
-      location: https://rmd-wordpress.eu/wp-json/wp/v2/posts/331
-      x-iplb-instance: '32684'
+      location: https://rmd-wordpress.eu/wp-json/wp/v2/posts/343
+      x-iplb-instance: '32682'
     body:
       encoding: UTF-8
       file: no
-      string: '{"id":331,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=331","raw":"https:\/\/rmd-wordpress.eu\/?p=331"},"modified":"2020-04-01T00:00:00","modified_gmt":"2020-03-31T22:00:00","password":"","slug":"post-rmd","status":"draft","type":"post","link":"https:\/\/rmd-wordpress.eu\/?p=331","title":{"raw":"Another
+      string: '{"id":343,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=343","raw":"https:\/\/rmd-wordpress.eu\/?p=343"},"modified":"2020-04-01T00:00:00","modified_gmt":"2020-03-31T22:00:00","password":"","slug":"post-rmd","status":"draft","type":"post","link":"https:\/\/rmd-wordpress.eu\/?p=343","title":{"raw":"Another
         Rmd Blog Post","rendered":"Another Rmd Blog Post"},"content":{"raw":"<h2 id=\"r-markdown\">R
         Markdown<\/h2>\n<p>A citation<a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"><sup>1<\/sup><\/a>.
         R is cool<a href=\"#fn2\" class=\"footnote-ref\" id=\"fnref2\"><sup>2<\/sup><\/a>.<\/p>\n<p>This
@@ -237,12 +274,12 @@ http_interactions:
         2020), <a href=\"https:\/\/www.R-project.org\/\" class=\"uri\">https:\/\/www.R-project.org\/<\/a>.<a
         href=\"#fnref2\" class=\"footnote-back\">\u21a9\ufe0e<\/a><\/p>\n<\/li>\n<\/ol>\n<\/div>\n","protected":false,"block_version":0},"excerpt":{"raw":"Here
         I summarize this fantastic post","rendered":"<p>Here I summarize this fantastic
-        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=331"}],"version-history":[{"count":0,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331\/revisions"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=331"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=331"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=331"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
-  recorded_at: 2020-06-26 08:40:48 GMT
+        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=343"}],"version-history":[{"count":0,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343\/revisions"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=343"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=343"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=343"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: get
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/media?parent=331
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/media?parent=343
     body:
       encoding: ''
       string: ''
@@ -257,7 +294,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:45 GMT
+      date: Fri, 26 Jun 2020 13:50:07 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -273,17 +310,16 @@ http_interactions:
       x-wp-total: '0'
       x-wp-totalpages: '0'
       allow: GET, POST
-      x-iplb-instance: '32684'
-      set-cookie: SERVERID112363=2820121|XvW0k|XvW0j; path=/
+      x-iplb-instance: '32682'
     body:
       encoding: UTF-8
       file: no
       string: '[]'
-  recorded_at: 2020-06-26 08:40:48 GMT
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: post
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/posts/331
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/posts/343
     body:
       encoding: ''
       string: '{"date":"2020-04-01T00:00:00","title":"Another Rmd Blog Post","slug":"post-rmd","comment_status":"closed","ping_status":"closed","status":"publish","content":"<h2
@@ -336,7 +372,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:45 GMT
+      date: Fri, 26 Jun 2020 13:50:07 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -350,11 +386,11 @@ http_interactions:
       expires: Wed, 11 Jan 1984 05:00:00 GMT
       cache-control: no-cache, must-revalidate, max-age=0
       allow: GET, POST, PUT, PATCH, DELETE
-      x-iplb-instance: '32683'
+      x-iplb-instance: '32682'
     body:
       encoding: UTF-8
       file: no
-      string: '{"id":331,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=331","raw":"https:\/\/rmd-wordpress.eu\/?p=331"},"modified":"2020-06-26T10:40:45","modified_gmt":"2020-06-26T08:40:45","password":"","slug":"post-rmd-2","status":"publish","type":"post","link":"https:\/\/rmd-wordpress.eu\/post-rmd-2\/","title":{"raw":"Another
+      string: '{"id":343,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=343","raw":"https:\/\/rmd-wordpress.eu\/?p=343"},"modified":"2020-06-26T15:50:07","modified_gmt":"2020-06-26T13:50:07","password":"","slug":"post-rmd-3","status":"publish","type":"post","link":"https:\/\/rmd-wordpress.eu\/post-rmd-3\/","title":{"raw":"Another
         Rmd Blog Post","rendered":"Another Rmd Blog Post"},"content":{"raw":"<h2 id=\"r-markdown\">R
         Markdown<\/h2>\n<p>A citation<a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"><sup>1<\/sup><\/a>.
         R is cool<a href=\"#fn2\" class=\"footnote-ref\" id=\"fnref2\"><sup>2<\/sup><\/a>.<\/p>\n<p>This
@@ -432,12 +468,12 @@ http_interactions:
         2020), <a href=\"https:\/\/www.R-project.org\/\" class=\"uri\">https:\/\/www.R-project.org\/<\/a>.<a
         href=\"#fnref2\" class=\"footnote-back\">\u21a9\ufe0e<\/a><\/p>\n<\/li>\n<\/ol>\n<\/div>\n","protected":false,"block_version":0},"excerpt":{"raw":"Here
         I summarize this fantastic post","rendered":"<p>Here I summarize this fantastic
-        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"Array","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=331"}],"version-history":[{"count":1,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331\/revisions"}],"predecessor-version":[{"id":332,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331\/revisions\/332"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=331"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=331"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=331"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
-  recorded_at: 2020-06-26 08:40:48 GMT
+        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"Array","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=343"}],"version-history":[{"count":1,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343\/revisions"}],"predecessor-version":[{"id":344,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343\/revisions\/344"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=343"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=343"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=343"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: get
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/categories
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/categories?per_page=100&search=R
     body:
       encoding: ''
       string: ''
@@ -452,7 +488,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:47 GMT
+      date: Fri, 26 Jun 2020 13:50:08 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -465,64 +501,101 @@ http_interactions:
       access-control-allow-headers: Authorization, Content-Type
       expires: Wed, 11 Jan 1984 05:00:00 GMT
       cache-control: no-cache, must-revalidate, max-age=0
-      x-wp-total: '7'
-      x-wp-totalpages: '1'
-      allow: GET, POST
-      x-iplb-instance: '32683'
-    body:
-      encoding: UTF-8
-      file: no
-      string: '[{"id":7,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/code\/","name":"code","slug":"code","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/7"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=7"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":14,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/code-and-stuff\/","name":"Code
-        and Stuff","slug":"code-and-stuff","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/14"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=14"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":6,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/math\/","name":"math","slug":"math","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/6"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=6"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":15,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/newcat\/","name":"newcat","slug":"newcat","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/15"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=15"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":1,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/non-classe\/","name":"Non
-        class\u00e9","slug":"non-classe","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/1"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=1"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":10,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r\/","name":"R","slug":"r","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/10"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=10"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":16,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r-programming\/","name":"R
-        Programming","slug":"r-programming","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/16"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=16"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
-  recorded_at: 2020-06-26 08:40:48 GMT
-  recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
-- request:
-    method: get
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/tags?per_page=100
-    body:
-      encoding: ''
-      string: ''
-    headers:
-      Accept: application/json, text/xml, application/xml, */*
-      Authorization: Basic bWFlbGxlLW5vdC1hZG1pbjo3M1pPIEpnUTUgOVdsUSA3am51IFJBMlggeWRQeA==
-      Content-Type: application/json
-  response:
-    status:
-      status_code: 200
-      category: Success
-      reason: OK
-      message: 'Success: (200) OK'
-    headers:
-      date: Fri, 26 Jun 2020 08:40:47 GMT
-      content-type: application/json; charset=UTF-8
-      transfer-encoding: chunked
-      connection: keep-alive
-      server: Apache
-      x-powered-by: PHP/7.2
-      x-robots-tag: noindex
-      link: <https://rmd-wordpress.eu/wp-json/>; rel="https://api.w.org/"
-      x-content-type-options: nosniff
-      access-control-expose-headers: X-WP-Total, X-WP-TotalPages
-      access-control-allow-headers: Authorization, Content-Type
-      expires: Wed, 11 Jan 1984 05:00:00 GMT
-      cache-control: no-cache, must-revalidate, max-age=0
-      x-wp-total: '8'
+      x-wp-total: '4'
       x-wp-totalpages: '1'
       allow: GET, POST
       x-iplb-instance: '32682'
     body:
       encoding: UTF-8
       file: no
-      string: '[{"id":11,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/citation\/","name":"citation","slug":"citation","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/11"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=11"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":12,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/code\/","name":"code","slug":"code","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/12"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=12"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":8,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/crul\/","name":"crul","slug":"crul","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/8"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=8"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":18,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/goodpress\/","name":"goodpress","slug":"goodpress","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/18"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=18"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":9,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/mathjax\/","name":"mathjax","slug":"mathjax","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/9"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=9"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":17,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/r-markdown\/","name":"R
-        Markdown","slug":"r-markdown","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/17"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=17"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":13,"count":2,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/r-packages\/","name":"R
-        packages","slug":"r-packages","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/13"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=13"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":19,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/wordpress\/","name":"WordPress","slug":"wordpress","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/19"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=19"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
-  recorded_at: 2020-06-26 08:40:48 GMT
+      string: '[{"id":21,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/code-and-other-stuff\/","name":"Code
+        and Other Stuff","slug":"code-and-other-stuff","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/21"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=21"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":20,"count":0,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/codeandotherstuff\/","name":"CodeandOtherStuff","slug":"codeandotherstuff","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/20"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=20"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":10,"count":3,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r\/","name":"R","slug":"r","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/10"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=10"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}},{"id":16,"count":1,"description":"","link":"https:\/\/rmd-wordpress.eu\/category\/r-programming\/","name":"R
+        Programming","slug":"r-programming","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories\/16"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/category"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?categories=16"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
+  recorded_at: 2020-06-26 13:50:10 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
+- request:
+    method: get
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/tags?per_page=100&search=citation
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Basic bWFlbGxlLW5vdC1hZG1pbjo3M1pPIEpnUTUgOVdsUSA3am51IFJBMlggeWRQeA==
+      Content-Type: application/json
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 26 Jun 2020 13:50:08 GMT
+      content-type: application/json; charset=UTF-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/7.2
+      x-robots-tag: noindex
+      link: <https://rmd-wordpress.eu/wp-json/>; rel="https://api.w.org/"
+      x-content-type-options: nosniff
+      access-control-expose-headers: X-WP-Total, X-WP-TotalPages
+      access-control-allow-headers: Authorization, Content-Type
+      expires: Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control: no-cache, must-revalidate, max-age=0
+      x-wp-total: '1'
+      x-wp-totalpages: '1'
+      allow: GET, POST
+      x-iplb-instance: '32682'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '[{"id":11,"count":3,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/citation\/","name":"citation","slug":"citation","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/11"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=11"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
+  recorded_at: 2020-06-26 13:50:10 GMT
+  recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
+- request:
+    method: get
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/tags?per_page=100&search=code
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Basic bWFlbGxlLW5vdC1hZG1pbjo3M1pPIEpnUTUgOVdsUSA3am51IFJBMlggeWRQeA==
+      Content-Type: application/json
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 26 Jun 2020 13:50:08 GMT
+      content-type: application/json; charset=UTF-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/7.2
+      x-robots-tag: noindex
+      link: <https://rmd-wordpress.eu/wp-json/>; rel="https://api.w.org/"
+      x-content-type-options: nosniff
+      access-control-expose-headers: X-WP-Total, X-WP-TotalPages
+      access-control-allow-headers: Authorization, Content-Type
+      expires: Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control: no-cache, must-revalidate, max-age=0
+      x-wp-total: '1'
+      x-wp-totalpages: '1'
+      allow: GET, POST
+      x-iplb-instance: '32682'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '[{"id":12,"count":3,"description":"","link":"https:\/\/rmd-wordpress.eu\/tag\/code\/","name":"code","slug":"code","taxonomy":"post_tag","meta":[],"_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags\/12"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/taxonomies\/post_tag"}],"wp:post_type":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts?tags=12"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}]'
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: post
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/posts/331
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/posts/343
     body:
       encoding: ''
       string: '{"date":"2020-04-01T00:00:00","title":"Another Rmd Blog Post","slug":"post-rmd","comment_status":"closed","ping_status":"closed","status":"draft","content":"<h2
@@ -575,7 +648,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:48 GMT
+      date: Fri, 26 Jun 2020 13:50:09 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -589,11 +662,12 @@ http_interactions:
       expires: Wed, 11 Jan 1984 05:00:00 GMT
       cache-control: no-cache, must-revalidate, max-age=0
       allow: GET, POST, PUT, PATCH, DELETE
-      x-iplb-instance: '32684'
+      x-iplb-instance: '32682'
+      set-cookie: SERVERID112363=282122|XvX9F|XvX9E; path=/
     body:
       encoding: UTF-8
       file: no
-      string: '{"id":331,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=331","raw":"https:\/\/rmd-wordpress.eu\/?p=331"},"modified":"2020-06-26T10:40:48","modified_gmt":"2020-06-26T08:40:48","password":"","slug":"post-rmd","status":"draft","type":"post","link":"https:\/\/rmd-wordpress.eu\/?p=331","title":{"raw":"Another
+      string: '{"id":343,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=343","raw":"https:\/\/rmd-wordpress.eu\/?p=343"},"modified":"2020-06-26T15:50:09","modified_gmt":"2020-06-26T13:50:09","password":"","slug":"post-rmd","status":"draft","type":"post","link":"https:\/\/rmd-wordpress.eu\/?p=343","title":{"raw":"Another
         Rmd Blog Post","rendered":"Another Rmd Blog Post"},"content":{"raw":"<h2 id=\"r-markdown\">R
         Markdown<\/h2>\n<p>A citation<a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"><sup>1<\/sup><\/a>.
         R is cool<a href=\"#fn2\" class=\"footnote-ref\" id=\"fnref2\"><sup>2<\/sup><\/a>.<\/p>\n<p>This
@@ -671,12 +745,12 @@ http_interactions:
         2020), <a href=\"https:\/\/www.R-project.org\/\" class=\"uri\">https:\/\/www.R-project.org\/<\/a>.<a
         href=\"#fnref2\" class=\"footnote-back\">\u21a9\ufe0e<\/a><\/p>\n<\/li>\n<\/ol>\n<\/div>\n","protected":false,"block_version":0},"excerpt":{"raw":"Here
         I summarize this fantastic post","rendered":"<p>Here I summarize this fantastic
-        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"Array","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=331"}],"version-history":[{"count":1,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331\/revisions"}],"predecessor-version":[{"id":332,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331\/revisions\/332"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=331"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=331"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=331"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
-  recorded_at: 2020-06-26 08:40:49 GMT
+        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"Array","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=343"}],"version-history":[{"count":1,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343\/revisions"}],"predecessor-version":[{"id":344,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343\/revisions\/344"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=343"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=343"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=343"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: get
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/media?parent=331
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/media?parent=343
     body:
       encoding: ''
       string: ''
@@ -691,7 +765,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:48 GMT
+      date: Fri, 26 Jun 2020 13:50:09 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -707,16 +781,16 @@ http_interactions:
       x-wp-total: '0'
       x-wp-totalpages: '0'
       allow: GET, POST
-      x-iplb-instance: '32684'
+      x-iplb-instance: '32683'
     body:
       encoding: UTF-8
       file: no
       string: '[]'
-  recorded_at: 2020-06-26 08:40:49 GMT
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92
 - request:
     method: post
-    uri: https://rmd-wordpress.eu/wp-json/wp/v2/posts/331
+    uri: https://rmd-wordpress.eu/wp-json/wp/v2/posts/343
     body:
       encoding: ''
       string: '{"date":"2020-04-01T00:00:00","title":"Another Rmd Blog Post","slug":"post-rmd","comment_status":"closed","ping_status":"closed","status":"publish","content":"<h2
@@ -769,7 +843,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Fri, 26 Jun 2020 08:40:48 GMT
+      date: Fri, 26 Jun 2020 13:50:09 GMT
       content-type: application/json; charset=UTF-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -783,11 +857,11 @@ http_interactions:
       expires: Wed, 11 Jan 1984 05:00:00 GMT
       cache-control: no-cache, must-revalidate, max-age=0
       allow: GET, POST, PUT, PATCH, DELETE
-      x-iplb-instance: '32681'
+      x-iplb-instance: '32682'
     body:
       encoding: UTF-8
       file: no
-      string: '{"id":331,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=331","raw":"https:\/\/rmd-wordpress.eu\/?p=331"},"modified":"2020-06-26T10:40:48","modified_gmt":"2020-06-26T08:40:48","password":"","slug":"post-rmd-2","status":"publish","type":"post","link":"https:\/\/rmd-wordpress.eu\/post-rmd-2\/","title":{"raw":"Another
+      string: '{"id":343,"date":"2020-04-01T00:00:00","date_gmt":"2020-03-31T22:00:00","guid":{"rendered":"https:\/\/rmd-wordpress.eu\/?p=343","raw":"https:\/\/rmd-wordpress.eu\/?p=343"},"modified":"2020-06-26T15:50:09","modified_gmt":"2020-06-26T13:50:09","password":"","slug":"post-rmd-3","status":"publish","type":"post","link":"https:\/\/rmd-wordpress.eu\/post-rmd-3\/","title":{"raw":"Another
         Rmd Blog Post","rendered":"Another Rmd Blog Post"},"content":{"raw":"<h2 id=\"r-markdown\">R
         Markdown<\/h2>\n<p>A citation<a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"><sup>1<\/sup><\/a>.
         R is cool<a href=\"#fn2\" class=\"footnote-ref\" id=\"fnref2\"><sup>2<\/sup><\/a>.<\/p>\n<p>This
@@ -865,6 +939,6 @@ http_interactions:
         2020), <a href=\"https:\/\/www.R-project.org\/\" class=\"uri\">https:\/\/www.R-project.org\/<\/a>.<a
         href=\"#fnref2\" class=\"footnote-back\">\u21a9\ufe0e<\/a><\/p>\n<\/li>\n<\/ol>\n<\/div>\n","protected":false,"block_version":0},"excerpt":{"raw":"Here
         I summarize this fantastic post","rendered":"<p>Here I summarize this fantastic
-        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"Array","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=331"}],"version-history":[{"count":1,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331\/revisions"}],"predecessor-version":[{"id":332,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331\/revisions\/332"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=331"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=331"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=331"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/331"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
-  recorded_at: 2020-06-26 08:40:49 GMT
+        post<\/p>\n","protected":false},"author":2,"featured_media":0,"comment_status":"closed","ping_status":"closed","sticky":false,"template":"Array","format":"standard","meta":[],"categories":[10],"tags":[11,12],"permalink_template":"https:\/\/rmd-wordpress.eu\/%postname%\/","generated_slug":"another-rmd-blog-post","_links":{"self":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"collection":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts"}],"about":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/types\/post"}],"author":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/comments?post=343"}],"version-history":[{"count":1,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343\/revisions"}],"predecessor-version":[{"id":344,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343\/revisions\/344"}],"wp:attachment":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/media?parent=343"}],"wp:term":[{"taxonomy":"category","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/categories?post=343"},{"taxonomy":"post_tag","embeddable":true,"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/tags?post=343"}],"wp:action-publish":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-unfiltered-html":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-sticky":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-author":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-categories":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-create-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"wp:action-assign-tags":[{"href":"https:\/\/rmd-wordpress.eu\/wp-json\/wp\/v2\/posts\/343"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}'
+  recorded_at: 2020-06-26 13:50:10 GMT
   recorded_with: vcr/0.4.2.93, webmockr/0.6.2.92

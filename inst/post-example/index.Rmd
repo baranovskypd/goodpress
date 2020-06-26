@@ -8,7 +8,7 @@ status: "publish"
 output: hugodown::md_document
 categories:
   - math
-  - Code and Stuff
+  - Code and Other Stuff
 tags:
   - crul
   - mathjax
