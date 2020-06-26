@@ -133,6 +133,12 @@
 <li>The first time you run <code><a href="reference/wp_post.html">wp_post()</a></code> for a folder, it creates a file called <code>.wordpress.yml</code> in the post folder, that contains, in particular, the URL and ID of the post on your WordPress website. This way, next time the function is run, the post is <em>updated</em>.</li>
 </ul>
 <p><a href="https://rmd-wordpress.eu/post-rmd/">Example post</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example2">its source</a>. Note that it includes citations as footnotes by using the <a href="https://github.com/r-lib/hugodown#citations">same strategy as hugodown</a>.</p>
+<p><strong>You could have one <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">big “blog” folder/RStudio project</a> with each post as a sub-folder, <a href="http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf">neatly named</a> YYYY-MM-DD-slug, and at the root of the blog folder you’d have this script you’d run from the RStudio project</strong></p>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw">wordpress_url</span> <span class="op">&lt;-</span> <span class="co"># your url</span>
+<span class="kw">today_post</span> <span class="op">&lt;-</span> <span class="st">"2020-06-01-cool-post"</span>
+<span class="kw">goodpress</span>::<span class="fu"><a href="reference/wp_post.html">wp_post</a></span>(<span class="kw">today_post</span>, <span class="kw">wordpress_url</span>)
+</pre></div>
 <div id="images-and-figures" class="section level3">
 <h3 class="hasAnchor">
 <a href="#images-and-figures" class="anchor"></a>Images and figures</h3>
@@ -155,14 +161,14 @@
 <h3 class="hasAnchor">
 <a href="#publication-status" class="anchor"></a>Publication status</h3>
 <p>The default status of the post is “publish”. If you want another status (status has to be one of: “publish”, “future”, “draft”, “pending”, “private”) , write it in the yaml (and then knit index.Rmd again) e.g.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="pp">---</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"private"</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"private"</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="pp">---</span></span></code></pre></div>
 <p>The package cannot handle private posts with password, only private posts that are visible to admins and editors only. You could create a private post, and then from the WordPress interface make it visible with password. Make it private again before trying to update the post with the R package.</p>
 </div>
 <div id="tags-and-categories" class="section level3">
@@ -170,36 +176,36 @@
 <a href="#tags-and-categories" class="anchor"></a>Tags and categories</h3>
 <p>You can use tags and categories in the YAML metadata of index.Rmd (rendered to index.md). If a tag or a category doesn’t exist <code><a href="reference/wp_post.html">wp_post()</a></code> will create it for you.</p>
 <p>e.g.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"publish"</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="fu">categories</span><span class="kw">:</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="at">  </span><span class="kw">-</span><span class="at"> math</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> crul</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mathjax</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="at">  </span><span class="kw">-</span><span class="at"> R packages</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="pp">---</span></span></code></pre></div>
-<p>Or (if there’s a single category or single tag)</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Another Rmd Blog Post"</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-rmd"</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> refs.bib</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">suppress-bibliography</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> chicago-fullnote-bibliography.csl</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> R</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"publish"</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">categories</span><span class="kw">:</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="at">  </span><span class="kw">-</span><span class="at"> math</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
 <span id="cb5-11"><a href="#cb5-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> citation</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="pp">---</span></span></code></pre></div>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> crul</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mathjax</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="at">  </span><span class="kw">-</span><span class="at"> R packages</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="pp">---</span></span></code></pre></div>
+<p>Or (if there’s a single category or single tag)</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Another Rmd Blog Post"</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-rmd"</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> refs.bib</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="fu">suppress-bibliography</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> chicago-fullnote-bibliography.csl</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> R</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> citation</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="pp">---</span></span></code></pre></div>
 </div>
 <div id="math-with-mathjax" class="section level3">
 <h3 class="hasAnchor">
