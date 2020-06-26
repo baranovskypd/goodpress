@@ -320,7 +320,7 @@ wp_handle_tags <- function(tags, wordpress_url) {
 
   online_tags <- wp_call_api(
     VERB = "GET",
-    api_url = paste0(wordpress_url, "/wp-json/wp/v2/tags")
+    api_url = paste0(wordpress_url, "/wp-json/wp/v2/tags?per_page=100")
   )
 
   online_tags_df <- data.frame(
