@@ -12,6 +12,15 @@ fs::dir_tree(system.file(file.path("post-example2"), package = "goodpress"))
 
 [Example post](https://rmd-wordpress.eu/post-rmd/) and [its source](https://github.com/maelle/goodpress/tree/main/inst/post-example2). Note that it includes citations as footnotes by using the [same strategy as hugodown](https://github.com/r-lib/hugodown#citations).
 
+**You could have one [big "blog" folder/RStudio project](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) with each post as a sub-folder, [neatly named](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf) YYYY-MM-DD-slug, and at the root of the blog folder you'd have this script you'd run from the RStudio project**
+
+```r
+wordpress_url <- # your url
+today_post <- "2020-06-01-cool-post"
+goodpress::wp_post(today_post, wordpress_url)
+```
+
+
 ### Images and figures
 
 * For plots generated via R, just use R Markdown as you normally would.

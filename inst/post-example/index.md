@@ -8,14 +8,14 @@ status: "publish"
 output: hugodown::md_document
 categories:
   - math
-  - Code and Stuff
+  - Code and Other Stuff
 tags:
   - crul
   - mathjax
   - R packages
 comment_status: open
 ping_status: open
-rmd_hash: 31d058d6817f2dc2
+rmd_hash: 0cb5d26a12b3c8fc
 
 ---
 

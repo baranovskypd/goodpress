@@ -1,8 +1,16 @@
 ---
-title: "Template Title"
-author: "Your Name"
-date: "The Date"
-output: md_document
+title: "The post title"
+date: "YYYY-MM-DDTHH:MM:SS"
+output: hugodown::md_document
+status: "publish"
+slug: "the-post-slug"
+categories:
+  - category1
+  - category2
+tags:
+  - R Markdown
+  - goodpress
+  - WordPress
 ---
 
 ```{r setup, include=FALSE}
@@ -10,13 +18,4 @@ knitr::opts_chunk$set(echo = TRUE)
 goodpress::set_hooks()
 ```
 
-## Nice subsection
-
-[A link](https://masalmon.eu)
-
-```{r eval=FALSE}
-usethis::use_git()
-ggplot(mtcars)
-plot(1:19)
-a <- TRUE
-```
+Refer to [goodpress usage vignette](https://maelle.github.io/goodpress/).

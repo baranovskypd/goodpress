@@ -42,6 +42,8 @@ WP_USER="yourusername"
 
 * Edited the [.htaccess file of my website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing).
 
+* If your website is using non-pretty permalinks (i.e. you have links à la `mywebsite.com/?p=42`, [you'll need to change that setting](https://developer.wordpress.org/rest-api/key-concepts/#routes-endpoints)). Pretty permalinks are better for SEO anyway. If that's a problem for you, please open an issue.
+
 ## Syntax highlighting
 
 ### For R
