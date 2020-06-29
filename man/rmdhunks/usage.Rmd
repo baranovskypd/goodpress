@@ -110,6 +110,7 @@ See [example post with math](https://rmd-wordpress.eu/post-slug/) and [its sourc
 You can add a [More tag](https://wordpress.com/support/wordpress-editor/blocks/more-block/2/) for your post if you don't want to show the whole post on your homepage.
 This can be done by adding a [Pandoc raw attribute](https://pandoc.org/MANUAL.html#extension-raw_attribute) in your `index.Rmd` post file i.e. copy-paste the lines below where you want the More tag to appear:
 
+````markdown
 ```{=html}
 <!-- wp:more -->
 <!--more-->
