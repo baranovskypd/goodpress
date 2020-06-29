@@ -17,3 +17,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 blablabla
 lalalala
+
+```yaml
+---
+title: "RMarkdown to WordPress with goodpress"
+date: "2020-06-25T00:00:00"
+output: hugodown::md_document
+status: "publish"
+slug: "rmarkdown-wordpress-goodpress"
+categories: R Programming
+tags:
+  - R Markdown
+  - goodpress
+  - WordPress
+---
+```
+
+```{r, eval = FALSE}
+ggplot2::ggplot()
+```
