@@ -157,7 +157,7 @@ Or maybe you forgot to re-start R after editing .Renviron?")
             this_img, "src"
            ) <- media$url[i]
        }
-    post_list$content <- as.character(content)
+    post_list$content <- as.character(xml2::xml_child(content))
 
    }
 
@@ -166,7 +166,6 @@ Or maybe you forgot to re-start R after editing .Renviron?")
    } else {
      post_list$status <- meta$status
    }
-
 
    post <- jsonlite::toJSON(
      post_list,
