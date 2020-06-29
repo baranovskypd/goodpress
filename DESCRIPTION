@@ -2,11 +2,15 @@ Package: goodpress
 Title: From R Markdown to WordPress with a Modern Stack
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Maëlle",
-           family = "Salmon",
-           role = c("cre", "aut"),
-           email = "maelle.salmon@yahoo.se",
-           comment = c(ORCID = "0000-0002-2815-0399"))
+    c(person(given = "Maëlle",
+             family = "Salmon",
+             role = c("cre", "aut"),
+             email = "maelle.salmon@yahoo.se",
+             comment = c(ORCID = "0000-0002-2815-0399")),
+      person(given = "Henry",
+             family = "Wang",
+             role = "ctb",
+             email = "henrywangnl@gmail.com"))
 Description: Helps you write from R Markdown to Wordpress
     directly.
 License: MIT + file LICENSE
