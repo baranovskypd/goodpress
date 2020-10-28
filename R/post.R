@@ -148,10 +148,10 @@ Or maybe you forgot to re-start R after editing .Renviron?")
      wordpress_url
    )
 
-   if (length(media)) {
+   if (!is.null(media)) {
      content <- xml2::read_html(post_list$content)
      imgs <- xml2::xml_find_all(content, "//img")
-       for (i in seq_along(media)) {
+       for (i in 1:nrow(media)) {
          this_img <- imgs[xml2::xml_attr(imgs, "src") == paste0("figs/", media$fig[i])]
           xml2::xml_attr(
             this_img, "src"
