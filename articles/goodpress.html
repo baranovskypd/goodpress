@@ -38,12 +38,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/setup.html">Setup</a>
 </li>
 <li>
@@ -79,7 +73,8 @@
 
       
 
-      </header><script src="goodpress_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="goodpress_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="goodpress_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="goodpress_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>goodpress</h1>
@@ -98,8 +93,7 @@
 <p>You can install the released version of goodpress from its GitHub repository:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="co"># install.packages("remotes")</span>
-<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"maelle/goodpress"</span>, ref = <span class="st">"main"</span>)
-</pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"maelle/goodpress"</span>, ref <span class="op">=</span> <span class="st">"main"</span><span class="op">)</span></pre></div>
 <p>Then you will need to tweaks things <strong>once</strong> on your website for three aspects</p>
 <ul>
 <li>Authentication (this is <strong>compulsory</strong>)</li>
@@ -116,7 +110,7 @@
 <li>Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under a “figs” folder.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw">fs</span>::<span class="fu"><a href="http://fs.r-lib.org/reference/dir_tree.html">dir_tree</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="st">"post-example2"</span>), package = <span class="st">"goodpress"</span>))
+<span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/dir_tree.html">dir_tree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"post-example2"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"goodpress"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; /Users/runner/work/_temp/Library/goodpress/post-example2</span>
 <span class="co">#&gt; ├── chicago-fullnote-bibliography.csl</span>
 <span class="co">#&gt; ├── figs</span>
@@ -124,8 +118,7 @@
 <span class="co">#&gt; │   └── unnamed-chunk-1-1.png</span>
 <span class="co">#&gt; ├── index.Rmd</span>
 <span class="co">#&gt; ├── index.md</span>
-<span class="co">#&gt; └── refs.bib</span>
-</pre></div>
+<span class="co">#&gt; └── refs.bib</span></pre></div>
 <ul>
 <li>The post index.Rmd should use <a href="https://hugodown.r-lib.org/reference/md_document.html"><code>hugodown::md_document</code></a> as an output format.</li>
 <li>Knit your post and then, run the function <code><a href="../reference/wp_post.html">wp_post()</a></code> that takes the path <strong>to the post folder</strong> as argument, create a draft post in your website, uploads all image media stored in the “figs” folder, edits the references to image media and then publishes the post.</li>
@@ -134,10 +127,9 @@
 <p><a href="https://rmd-wordpress.eu/post-rmd/">Example post</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example2">its source</a>. Note that it includes citations as footnotes by using the <a href="https://github.com/r-lib/hugodown#citations">same strategy as hugodown</a>.</p>
 <p><strong>You could have one <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">big “blog” folder/RStudio project</a> with each post as a sub-folder, <a href="http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf">neatly named</a> YYYY-MM-DD-slug, and at the root of the blog folder you’d have this script you’d run from the RStudio project</strong></p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">wordpress_url</span> <span class="op">&lt;-</span> <span class="co"># your url</span>
-<span class="kw">today_post</span> <span class="op">&lt;-</span> <span class="st">"2020-06-01-cool-post"</span>
-<span class="kw">goodpress</span>::<span class="fu"><a href="../reference/wp_post.html">wp_post</a></span>(<span class="kw">today_post</span>, <span class="kw">wordpress_url</span>)
-</pre></div>
+<span class="va">wordpress_url</span> <span class="op">&lt;-</span> <span class="co"># your url</span>
+<span class="va">today_post</span> <span class="op">&lt;-</span> <span class="st">"2020-06-01-cool-post"</span>
+<span class="fu">goodpress</span><span class="fu">::</span><span class="fu"><a href="../reference/wp_post.html">wp_post</a></span><span class="op">(</span><span class="va">today_post</span>, <span class="va">wordpress_url</span><span class="op">)</span></pre></div>
 <div id="images-and-figures" class="section level3">
 <h3 class="hasAnchor">
 <a href="#images-and-figures" class="anchor"></a>Images and figures</h3>
@@ -213,6 +205,16 @@
 <p>In every post where you want to use math, use <a href="https://docs.mathjax.org/en/latest/input/tex/index.html">MathJax input</a> (MathML, LaTeX). After formulas put a few empty lines.</p>
 <p>See <a href="https://rmd-wordpress.eu/post-slug/">example post with math</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example">its source</a>.</p>
 </div>
+<div id="read-more-separator" class="section level3">
+<h3 class="hasAnchor">
+<a href="#read-more-separator" class="anchor"></a>Read more separator</h3>
+<p>You can add a <a href="https://wordpress.com/support/wordpress-editor/blocks/more-block/2/">More tag</a> for your post if you don’t want to show the whole post on your homepage. This can be done by adding a <a href="https://pandoc.org/MANUAL.html#extension-raw_attribute">Pandoc raw attribute</a> in your <code>index.Rmd</code> post file i.e. copy-paste the lines below where you want the More tag to appear:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="bn">```{=html}</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bn">&lt;!-- wp:more --&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="bn">&lt;!--more--&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="bn">&lt;!-- /wp:more --&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="bn">```</span></span></code></pre></div>
+</div>
 <div id="technical-details" class="section level3">
 <h3 class="hasAnchor">
 <a href="#technical-details" class="anchor"></a>Technical details</h3>
@@ -245,11 +247,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://masalmon.eu">Maëlle Salmon</a>.</p>
+  <p>Developed by <a href="https://masalmon.eu">Maëlle Salmon</a>, Henry Wang.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
