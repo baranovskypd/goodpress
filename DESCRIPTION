@@ -9,7 +9,7 @@ Authors@R:
              comment = c(ORCID = "0000-0002-2815-0399")),
       person(given = "Henry",
              family = "Wang",
-             role = "ctb",
+             role = "aut",
              email = "henrywangnl@gmail.com"))
 Description: Helps you write from R Markdown to Wordpress
     directly.
