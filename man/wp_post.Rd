@@ -4,7 +4,7 @@
 \alias{wp_post}
 \title{Post a post to Wordpress}
 \usage{
-wp_post(post_folder, wordpress_url)
+wp_post(post_folder, wordpress_url, encoding = "UTF-8")
 }
 \arguments{
 \item{post_folder}{Path to folder where the post
@@ -13,6 +13,8 @@ index.md, images)
 lives}
 
 \item{wordpress_url}{URL to your website}
+
+\item{encoding}{Encoding argument to readLines}
 }
 \value{
 URL to the post (invisibly)

@@ -5,6 +5,7 @@
 #' index.md, images)
 #' lives
 #' @param wordpress_url URL to your website
+#' @param encoding Encoding argument to readLines
 #'
 #' @details Several aspects of the post can be controlled by the YAML of index.Rmd.
 #' ```yaml
@@ -51,7 +52,7 @@
 #' wp_post(tmp_post_folder, wordpress_url)
 #' file.remove(dir(tmp_post_folder, full.names = TRUE))
 #' }
-wp_post <- function(post_folder, wordpress_url) {
+wp_post <- function(post_folder, wordpress_url, encoding = "UTF-8") {
 
    if(!(nzchar(Sys.getenv("WP_USER")) && nzchar(Sys.getenv("WP_PWD")))) {
      stop("The environment variables WP_USER (username) and WP_PWD (application password) have not been set correctly in .Renviron.
@@ -77,7 +78,7 @@ Or maybe you forgot to re-start R after editing .Renviron?")
        )
    )
 
-   body <- glue::glue_collapse(readLines(html_path), sep = "\n")
+   body <- glue::glue_collapse(readLines(html_path, encoding = encoding), sep = "\n")
    file.remove(html_path)
 
    meta <- rmarkdown::yaml_front_matter(path)
