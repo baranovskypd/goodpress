@@ -21,11 +21,13 @@ goodpress::wp_post(today_post, wordpress_url)
 ```
 
 
-### Images and figures
+### Images, figures, and Videos
 
 * For plots generated via R, just use R Markdown as you normally would.
 
 * For images not generated from R code, save them in the `figs` subfolder and use `knitr::include_graphics()` to include them. See [example post with a cat picture](https://rmd-wordpress.eu/post-slug/) and [its source](https://github.com/maelle/goodpress/tree/main/inst/post-example).
+
+* For videos you can embed them using [vembedr](https://ijlyttle.github.io/vembedr/articles/vembedr.html).
 
 ### Author
 
@@ -55,7 +57,7 @@ The package cannot handle private posts with password, only private posts that a
 
 ### Tags and categories
 
-You can use tags and categories in the YAML metadata of index.Rmd (rendered to index.md). 
+You can use tags and categories in the YAML metadata of index.Rmd (rendered to index.md). `wp_categories()` and `wp_tags()` are two helper functions for you to get your WordPress categories and tags details for your YAML metadata.
 If a tag or a category doesn't exist `wp_post()` will create it for you.
 
 e.g.
@@ -108,15 +110,7 @@ See [example post with math](https://rmd-wordpress.eu/post-slug/) and [its sourc
 ### Read more separator
 
 You can add a [More tag](https://wordpress.com/support/wordpress-editor/blocks/more-block/2/) for your post if you don't want to show the whole post on your homepage.
-This can be done by adding a [Pandoc raw attribute](https://pandoc.org/MANUAL.html#extension-raw_attribute) in your `index.Rmd` post file i.e. copy-paste the lines below where you want the More tag to appear:
-
-````markdown
-```{=html}
-<!-- wp:more -->
-<!--more-->
-<!-- /wp:more -->
-```
-````
+This can be done by adding a `` `r "\u0060r goodpress::read_more()\u0060"` `` inline code wherever you want the More tag to appear in your `index.Rmd` post file.
 
 ### Technical details
 
