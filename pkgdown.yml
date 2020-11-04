@@ -1,10 +1,10 @@
 pandoc: 2.7.3
 pkgdown: 1.6.1.9000
-pkgdown_sha: e1e46f2e13c7efdb17bc4eae40bc3779c2b0b517
+pkgdown_sha: e5847476d79f08b4cdca0ed5cc55bf55fc18a161
 articles:
   goodpress: goodpress.html
   setup: setup.html
-last_built: 2020-11-03T11:58Z
+last_built: 2020-11-04T11:47Z
 urls:
   reference: https://maelle.github.io/goodpress//reference
   article: https://maelle.github.io/goodpress//articles
