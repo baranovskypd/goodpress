@@ -31,7 +31,8 @@ Imports:
     utils,
     withr,
     xml2,
-    yaml
+    yaml,
+    slugify
 Suggests: 
     covr,
     fs,

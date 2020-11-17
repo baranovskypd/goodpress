@@ -25,8 +25,10 @@ read_more <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wordpress_url <- "https://rmd-wordpress.eu" # replace with your own (test) website
 #' wp_categories(wordpress_url)
+#' }
 wp_categories <- function(wordpress_url) {
   if (is.null(wordpress_url)) {
     stop("wordpress_url is missing")
@@ -45,8 +47,10 @@ wp_categories <- function(wordpress_url) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wordpress_url <- "https://rmd-wordpress.eu" # replace with your own (test) website
 #' wp_tags(wordpress_url)
+#' }
 wp_tags <- function(wordpress_url) {
   if (is.null(wordpress_url)) {
     stop("wordpress_url is missing")

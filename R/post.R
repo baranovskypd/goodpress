@@ -95,9 +95,12 @@ Or maybe you forgot to re-start R after editing .Renviron?")
     meta$author, wordpress_url
   )
 
-   post_list <- list( 'date' = meta$date,
+  date <- format(Sys.time(), '%Y-%m-%dT%H:%M:%S')
+  slug <- slugify::slugify(meta$title)
+
+   post_list <- list( 'date' = meta$date %||% date,
                       'title' = meta$title,
-                      'slug' = meta$slug %||% NULL,
+                      'slug' = meta$slug %||% slug,
                       'comment_status' = meta$comment_status %||% "closed",
                       'ping_status' = meta$ping_status %||% "closed",
                       'status' = 'draft',

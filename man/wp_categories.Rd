@@ -17,6 +17,8 @@ This function helps you get your WordPress categories
 details so that you can use for your YAML header.
 }
 \examples{
+\dontrun{
 wordpress_url <- "https://rmd-wordpress.eu" # replace with your own (test) website
 wp_categories(wordpress_url)
+}
 }
