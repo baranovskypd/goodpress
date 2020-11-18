@@ -40,6 +40,8 @@ Suggests:
     vcr
 VignetteBuilder: 
     knitr
+Depends: 
+    R (>= 3.6.0)
 Remotes:
     r-lib/hugodown,
     ropensci/vcr,
