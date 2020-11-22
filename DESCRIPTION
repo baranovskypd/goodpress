@@ -42,7 +42,8 @@ VignetteBuilder:
     knitr
 Remotes:
     r-lib/hugodown,
-    ropensci/vcr
+    ropensci/vcr,
+    hrbrmstr/slugify
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
