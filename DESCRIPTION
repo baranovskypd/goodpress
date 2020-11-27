@@ -31,7 +31,8 @@ Imports:
     utils,
     withr,
     xml2,
-    yaml
+    yaml,
+    slugify
 Suggests: 
     covr,
     fs,
@@ -39,9 +40,12 @@ Suggests:
     vcr
 VignetteBuilder: 
     knitr
+Depends: 
+    R (>= 3.6.0)
 Remotes:
     r-lib/hugodown,
-    ropensci/vcr
+    ropensci/vcr,
+    hrbrmstr/slugify
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

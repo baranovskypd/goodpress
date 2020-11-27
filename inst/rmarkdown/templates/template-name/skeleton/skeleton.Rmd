@@ -1,21 +1,37 @@
 ---
-title: "The post title"
-date: "YYYY-MM-DDTHH:MM:SS"
+title: "The Post Title"
 output: hugodown::md_document
 status: "publish"
-slug: "the-post-slug"
+comment_status: "open"
 categories:
   - category1
   - category2
 tags:
-  - R Markdown
-  - goodpress
-  - WordPress
+  - tag1
+  - tag2
+  - tag3
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-goodpress::set_hooks()
+This is a `goodpress` template for writing WordPress post in `R Markdown` format.
+
+## YAML Header
+
+By default, the YAML Header allows you to control the metadata of your post (e.g., `title`, `date`, and `slug`). You may only need to provide `title`.
+
+## Plots, Images, and Videos
+
+You can include R Plots just as what you normally do:
+
+```{r pressure, fig.cap="Plots from R Code"}
+plot(pressure)
 ```
 
-Refer to [goodpress usage vignette](https://maelle.github.io/goodpress/).
+Or you can add external images like this:
+
+```{r fig.cap="External Images"}
+knitr::include_graphics(file.path("figs", "pressure-1.png"))
+```
+
+Lastly, for videos you can embed them using [vembedr package](https://ijlyttle.github.io/vembedr/articles/vembedr.html).
+
+For more information, please refer to [goodpress usage vignette](https://maelle.github.io/goodpress/).
