@@ -74,7 +74,7 @@ Or maybe you forgot to re-start R after editing .Renviron?")
        to = "html",
        output = html_path,
        wd = getwd(),
-       options = "--mathjax"
+       options = c("--mathjax","--wrap=none")
        )
    )
 
