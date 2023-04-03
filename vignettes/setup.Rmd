@@ -20,18 +20,13 @@ You might not need to tweak syntax highlighting and math stuff if you, well, nev
 
 ## Authentication
 
-From WordPress point-of-view this package is a "remote application" therefore it needs your website to use an [authentication _plugin_](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#authentication-plugins).
-At the moment, for the sake of simplicity, this package only relies on [Application Passwords](https://wordpress.org/plugins/application-passwords/).
-
-You cannot install plugins if you use wordpress.com (unless you have a costly business plan there), therefore with wordpress.com you cannot use the REST API.
-There are paid services out there providing a domain name, hosting and a one-click WordPress install, 
-for a few dollars a month,
-that you could use if you don't roll your own server.
+From the point-of-view of WordPress this package is a "remote application" that will need an application password to interact with your WordPress site through the [REST API](https://developer.wordpress.org/rest-api/). 
 
 Here's what I did to be able to use this package on my [test website](https://rmd-wordpress.eu/):
 
-* Installed and activated the [Application Passwords plugin](https://wordpress.org/plugins/application-passwords/). _Don't forget to keep your WordPress plugins up-to-date especially because of security updates._
-* Created a new user with editor rights, not admin, and from the admin panel I created an application password for "rmarkdown" for that user. _Doing this for an user with restricted access is safer._
+* Created a new user with editor rights, not admin, and [from the admin panel](https://make.wordpress.org/core/2020/11/05/application-passwords-integration-guide/#Getting-Credentials) I created an application password for "rmarkdown" for that user. _While you do not strictly need to create a new user to create an application password, doing this for an user with restricted access is safer._
+_Note:_ This setup has been tested up to WordPress 6.2 (self-hosted, i.e. wordpress.org). It may be possible to also use it on the centralised WordPress.com if you [follow these instructions](https://wordpress.com/support/third-party-applications/#sites-with-plugins-installed) to generate an application password.
+
 * In [`.Renviron`](https://rstats.wtf/r-startup.html#renviron), save username as `WP_USER` and application password as `WP_PWD`. Re-start R. _Keep `.Renviron` safe, it contains secrets!_ Here's an example of .Renviron below, the empty line at the end of the file is needed.
 
 ```yaml
@@ -39,9 +34,6 @@ WP_PWD="your application password including space e.g. blabla blabla blabla blab
 WP_USER="yourusername"
 
 ```
-
-* Edited the [.htaccess file of my website](https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing).
-
 * If your website is using non-pretty permalinks (i.e. you have links à la `mywebsite.com/?p=42`, [you'll need to change that setting](https://developer.wordpress.org/rest-api/key-concepts/#routes-endpoints)). Pretty permalinks are better for SEO anyway. If that's a problem for you, please open an issue.
 
 ## Syntax highlighting
