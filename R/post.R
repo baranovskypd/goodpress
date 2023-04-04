@@ -229,7 +229,7 @@ Or maybe you forgot to re-start R after editing .Renviron?")
   media <- wp_call_api(VERB = "GET", api_url = api_url)
 
   if (length(media) > 0) {
-    media_ids <- purrr::map_chr(media, "id")[purrr::map_chr(media, "media_type") == "image"]
+    media_ids <- purrr::map_chr(media, ~as.character(.x[["id"]]))[purrr::map_chr(media, "media_type") == "image"]
     purrr::walk(media_ids, wp_delete_media,
                 wordpress_url)
   }
@@ -281,7 +281,7 @@ wp_get_taxo_id <- function(term, taxo, wordpress_url) {
   )
 
   online_terms_df <- data.frame(
-    id = purrr::map_chr(online_terms, "id"),
+    id = purrr::map_chr(online_terms, ~as.character(.x[["id"]])),
     name = purrr::map_chr(online_terms, "name"),
     stringsAsFactors = FALSE
   )
@@ -353,7 +353,7 @@ wp_handle_author <- function(author, wordpress_url) {
   )
 
   online_authors_df <- data.frame(
-    id = purrr::map_chr(online_authors, "id"),
+    id = purrr::map_chr(online_authors, ~as.character(.x[["id"]])),
     name = purrr::map_chr(online_authors, "name"),
     stringsAsFactors = FALSE
   )
