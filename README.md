@@ -22,11 +22,7 @@ The goal of goodpress is to post to [WordPress](https://wordpress.org/)
 from [R Markdown](https://rmarkdown.rstudio.com/). I need this prototype
 for [a course](https://scientific-rmd-blogging.netlify.app/). 😺
 
-**Limitation**: This package works with WordPress REST API and needs
-your adding an authentication plugin to your WordPress website. You can
-only install plugins on WordPress websites that are either **not** on
-wordpress.com (self-hosted; paid service somewhere) or with a costly
-wordpress.com business plan.
+**Limitation**: This package relies on the standard WordPress REST API but has only been tested on self-hosted Wordpress installations. It may or may not work with the centralised wordpress.com service (if it does, please report back, for instance in an issue).
 
 **Important disclaimer**: I don’t use WordPress, so I am not sure you
 should trust me. You are welcome to try out the package (not on
