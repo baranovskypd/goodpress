@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goodpress</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
@@ -49,14 +51,14 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/maelle/goodpress/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/maelle/goodpress/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="http://twitter.com/ma_salmon">
-    <span class="fab fa fab fa-twitter fa-lg"></span>
+  <a href="http://twitter.com/ma_salmon" class="external-link">
+    <span class="fab fa-twitter fa-lg"></span>
      
   </a>
 </li>
@@ -73,27 +75,29 @@
 
       
 
-      </header><script src="goodpress_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>goodpress</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/maelle/goodpress/blob/master/vignettes/goodpress.Rmd"><code>vignettes/goodpress.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/maelle/goodpress/blob/HEAD/vignettes/goodpress.Rmd" class="external-link"><code>vignettes/goodpress.Rmd</code></a></small>
       <div class="hidden name"><code>goodpress.Rmd</code></div>
 
     </div>
 
     
     
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of goodpress from its GitHub repository:</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the released version of goodpress from its GitHub
+repository:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"maelle/goodpress"</span>, ref <span class="op">=</span> <span class="st">"main"</span><span class="op">)</span></code></pre></div>
-<p>Then you will need to tweaks things <strong>once</strong> on your website for three aspects</p>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"maelle/goodpress"</span>, ref <span class="op">=</span> <span class="st">"main"</span><span class="op">)</span></span></code></pre></div>
+<p>Then you will need to tweaks things <strong>once</strong> on your
+website for three aspects</p>
 <ul>
 <li>Authentication (this is <strong>compulsory</strong>)</li>
 <li>Syntax highlighting (if you want to show R code in your posts)</li>
@@ -101,132 +105,194 @@
 </ul>
 <p>See <code><a href="../articles/setup.html">vignette("setup", package = "goodpress")</a></code>.</p>
 </div>
-<div id="workflow" class="section level2">
-<h2 class="hasAnchor">
-<a href="#workflow" class="anchor"></a>Workflow</h2>
-<p>The summary is: create your posts in folders as index.Rmd with <code><a href="https://rdrr.io/pkg/hugodown/man/md_document.html">hugodown::md_document</a></code> output format; knit, <code><a href="../reference/wp_post.html">wp_post()</a></code>, rinse, repeat.</p>
+<div class="section level2">
+<h2 id="workflow">Workflow<a class="anchor" aria-label="anchor" href="#workflow"></a>
+</h2>
+<p>The summary is: create your posts in folders as index.Rmd with
+<code><a href="https://rdrr.io/pkg/hugodown/man/md_document.html" class="external-link">hugodown::md_document</a></code> output format; knit,
+<code><a href="../reference/wp_post.html">wp_post()</a></code>, rinse, repeat.</p>
 <ul>
-<li>Create your posts in folders, one folder per post, with index.Rmd knitted to index.md and figures under a “figs” folder.</li>
+<li>Create your posts in folders, one folder per post, with index.Rmd
+knitted to index.md and figures under a “figs” folder.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="http://fs.r-lib.org/reference/dir_tree.html">dir_tree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"post-example2"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"goodpress"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; /Users/runner/work/_temp/Library/goodpress/post-example2</span>
-<span class="co">#&gt; ├── chicago-fullnote-bibliography.csl</span>
-<span class="co">#&gt; ├── figs</span>
-<span class="co">#&gt; │   ├── pressure-1.png</span>
-<span class="co">#&gt; │   └── unnamed-chunk-1-1.png</span>
-<span class="co">#&gt; ├── index.Rmd</span>
-<span class="co">#&gt; ├── index.md</span>
-<span class="co">#&gt; └── refs.bib</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/dir_tree.html" class="external-link">dir_tree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"post-example2"</span><span class="op">)</span>, package <span class="op">=</span> <span class="st">"goodpress"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #0000BB; font-weight: bold;">/home/runner/work/_temp/Library/goodpress/post-example2</span></span></span>
+<span><span class="co">#&gt; ├── chicago-fullnote-bibliography.csl</span></span>
+<span><span class="co">#&gt; ├── <span style="color: #0000BB; font-weight: bold;">figs</span></span></span>
+<span><span class="co">#&gt; │   ├── <span style="color: #BB00BB; font-weight: bold;">pressure-1.png</span></span></span>
+<span><span class="co">#&gt; │   └── <span style="color: #BB00BB; font-weight: bold;">unnamed-chunk-1-1.png</span></span></span>
+<span><span class="co">#&gt; ├── <span style="color: #00BB00;">index.Rmd</span></span></span>
+<span><span class="co">#&gt; ├── index.md</span></span>
+<span><span class="co">#&gt; └── refs.bib</span></span></code></pre></div>
 <ul>
-<li>The post index.Rmd should use <a href="https://hugodown.r-lib.org/reference/md_document.html"><code>hugodown::md_document</code></a> as an output format.</li>
-<li>Knit your post and then, run the function <code><a href="../reference/wp_post.html">wp_post()</a></code> that takes the path <strong>to the post folder</strong> as argument, create a draft post in your website, uploads all image media stored in the “figs” folder, edits the references to image media and then publishes the post.</li>
-<li>The first time you run <code><a href="../reference/wp_post.html">wp_post()</a></code> for a folder, it creates a file called <code>.wordpress.yml</code> in the post folder, that contains, in particular, the URL and ID of the post on your WordPress website. This way, next time the function is run, the post is <em>updated</em>.</li>
+<li>The post index.Rmd should use <a href="https://hugodown.r-lib.org/reference/md_document.html" class="external-link"><code>hugodown::md_document</code></a>
+as an output format.</li>
+<li>Knit your post and then, run the function <code><a href="../reference/wp_post.html">wp_post()</a></code>
+that takes the path <strong>to the post folder</strong> as argument,
+create a draft post in your website, uploads all image media stored in
+the “figs” folder, edits the references to image media and then
+publishes the post.</li>
+<li>The first time you run <code><a href="../reference/wp_post.html">wp_post()</a></code> for a folder, it
+creates a file called <code>.wordpress.yml</code> in the post folder,
+that contains, in particular, the URL and ID of the post on your
+WordPress website. This way, next time the function is run, the post is
+<em>updated</em>.</li>
 </ul>
-<p><a href="https://rmd-wordpress.eu/post-rmd/">Example post</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example2">its source</a>. Note that it includes citations as footnotes by using the <a href="https://github.com/r-lib/hugodown#citations">same strategy as hugodown</a>.</p>
-<p><strong>You could have one <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">big “blog” folder/RStudio project</a> with each post as a sub-folder, <a href="http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf">neatly named</a> YYYY-MM-DD-slug, and at the root of the blog folder you’d have this script you’d run from the RStudio project</strong></p>
+<p><a href="https://rmd-wordpress.eu/post-rmd/" class="external-link">Example post</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example2" class="external-link">its
+source</a>. Note that it includes citations as footnotes by using the <a href="https://github.com/r-lib/hugodown#citations" class="external-link">same strategy as
+hugodown</a>.</p>
+<p><strong>You could have one <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/" class="external-link">big
+“blog” folder/RStudio project</a> with each post as a sub-folder, <a href="http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf" class="external-link">neatly
+named</a> YYYY-MM-DD-slug, and at the root of the blog folder you’d have
+this script you’d run from the RStudio project</strong></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">wordpress_url</span> <span class="op">&lt;-</span> <span class="co"># your url</span>
-<span class="va">today_post</span> <span class="op">&lt;-</span> <span class="st">"2020-06-01-cool-post"</span>
-<span class="fu">goodpress</span><span class="fu">::</span><span class="fu"><a href="../reference/wp_post.html">wp_post</a></span><span class="op">(</span><span class="va">today_post</span>, <span class="va">wordpress_url</span><span class="op">)</span></code></pre></div>
-<div id="images-figures-and-videos" class="section level3">
-<h3 class="hasAnchor">
-<a href="#images-figures-and-videos" class="anchor"></a>Images, figures, and Videos</h3>
+<code class="sourceCode R"><span><span class="va">wordpress_url</span> <span class="op">&lt;-</span> <span class="co"># your url</span></span>
+<span><span class="va">today_post</span> <span class="op">&lt;-</span> <span class="st">"2020-06-01-cool-post"</span></span>
+<span><span class="fu">goodpress</span><span class="fu">::</span><span class="fu"><a href="../reference/wp_post.html">wp_post</a></span><span class="op">(</span><span class="va">today_post</span>, <span class="va">wordpress_url</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="images-figures-and-videos">Images, figures, and Videos<a class="anchor" aria-label="anchor" href="#images-figures-and-videos"></a>
+</h3>
 <ul>
-<li><p>For plots generated via R, just use R Markdown as you normally would.</p></li>
-<li><p>For images not generated from R code, save them in the <code>figs</code> subfolder and use <code><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">knitr::include_graphics()</a></code> to include them. See <a href="https://rmd-wordpress.eu/post-slug/">example post with a cat picture</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example">its source</a>.</p></li>
-<li><p>For videos you can embed them using <a href="https://ijlyttle.github.io/vembedr/articles/vembedr.html">vembedr</a>.</p></li>
+<li><p>For plots generated via R, just use R Markdown as you normally
+would.</p></li>
+<li><p>For images not generated from R code, save them in the
+<code>figs</code> subfolder and use
+<code><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html" class="external-link">knitr::include_graphics()</a></code> to include them. See <a href="https://rmd-wordpress.eu/post-slug/" class="external-link">example post with a cat
+picture</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example" class="external-link">its
+source</a>.</p></li>
+<li><p>For videos you can embed them using <a href="https://ijlyttle.github.io/vembedr/articles/vembedr.html" class="external-link">vembedr</a>.</p></li>
 </ul>
 </div>
-<div id="author" class="section level3">
-<h3 class="hasAnchor">
-<a href="#author" class="anchor"></a>Author</h3>
+<div class="section level3">
+<h3 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a>
+</h3>
 <p>You can either</p>
 <ul>
-<li>not write any author in the YAML metadata, and the author will be the authenticated user.</li>
-<li>write an existing username which is useful when you are posting or editing on someone else’s behalf.</li>
+<li>not write any author in the YAML metadata, and the author will be
+the authenticated user.</li>
+<li>write an existing username which is useful when you are posting or
+editing on someone else’s behalf.</li>
 </ul>
-<p>You cannot create an user with this package, you have to use WordPress interface for that.</p>
+<p>You cannot create an user with this package, you have to use
+WordPress interface for that.</p>
 </div>
-<div id="publication-status" class="section level3">
-<h3 class="hasAnchor">
-<a href="#publication-status" class="anchor"></a>Publication status</h3>
-<p>The default status of the post is “publish”. If you want another status (status has to be one of: “publish”, “future”, “draft”, “pending”, “private”) , write it in the yaml (and then knit index.Rmd again) e.g.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"private"</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="pp">---</span></span></code></pre></div>
-<p>The package cannot handle private posts with password, only private posts that are visible to admins and editors only. You could create a private post, and then from the WordPress interface make it visible with password. Make it private again before trying to update the post with the R package.</p>
+<div class="section level3">
+<h3 id="publication-status">Publication status<a class="anchor" aria-label="anchor" href="#publication-status"></a>
+</h3>
+<p>The default status of the post is “publish”. If you want another
+status (status has to be one of: “publish”, “future”, “draft”,
+“pending”, “private”) , write it in the yaml (and then knit index.Rmd
+again) e.g.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"private"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>The package cannot handle private posts with password, only private
+posts that are visible to admins and editors only. You could create a
+private post, and then from the WordPress interface make it visible with
+password. Make it private again before trying to update the post with
+the R package.</p>
 </div>
-<div id="tags-and-categories" class="section level3">
-<h3 class="hasAnchor">
-<a href="#tags-and-categories" class="anchor"></a>Tags and categories</h3>
-<p>You can use tags and categories in the YAML metadata of index.Rmd (rendered to index.md). <code><a href="../reference/wp_categories.html">wp_categories()</a></code> and <code><a href="../reference/wp_tags.html">wp_tags()</a></code> are two helper functions for you to get your WordPress categories and tags details for your YAML metadata. If a tag or a category doesn’t exist <code><a href="../reference/wp_post.html">wp_post()</a></code> will create it for you.</p>
+<div class="section level3">
+<h3 id="tags-and-categories">Tags and categories<a class="anchor" aria-label="anchor" href="#tags-and-categories"></a>
+</h3>
+<p>You can use tags and categories in the YAML metadata of index.Rmd
+(rendered to index.md). <code><a href="../reference/wp_categories.html">wp_categories()</a></code> and
+<code><a href="../reference/wp_tags.html">wp_tags()</a></code> are two helper functions for you to get your
+WordPress categories and tags details for your YAML metadata. If a tag
+or a category doesn’t exist <code><a href="../reference/wp_post.html">wp_post()</a></code> will create it for
+you.</p>
 <p>e.g.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"publish"</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">categories</span><span class="kw">:</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="at">  </span><span class="kw">-</span><span class="at"> math</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> crul</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mathjax</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="at">  </span><span class="kw">-</span><span class="at"> R packages</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Title of the Post"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-slug"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> </span><span class="st">"publish"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> math</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> crul</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mathjax</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> R packages</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>Or (if there’s a single category or single tag)</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="pp">---</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Another Rmd Blog Post"</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-rmd"</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> refs.bib</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="fu">suppress-bibliography</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> chicago-fullnote-bibliography.csl</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> R</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="fu">tags</span><span class="kw">:</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> citation</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Another Rmd Blog Post"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2020-04-01T00:00:00"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> </span><span class="st">"post-rmd"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">excerpt</span><span class="kw">:</span><span class="at"> </span><span class="st">"Here I summarize this fantastic post"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> hugodown::md_document</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> refs.bib</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">suppress-bibliography</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> chicago-fullnote-bibliography.csl</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> R</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> citation</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> code</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 </div>
-<div id="math-with-mathjax" class="section level3">
-<h3 class="hasAnchor">
-<a href="#math-with-mathjax" class="anchor"></a>Math with MathJax</h3>
-<p>First, add <a href="https://maelle.github.io/goodpress/articles/setup.html#math-1">MathJax JS script to your website</a>, <strong>once</strong>.</p>
-<p>In every post where you want to use math, use <a href="https://docs.mathjax.org/en/latest/input/tex/index.html">MathJax input</a> (MathML, LaTeX). After formulas put a few empty lines.</p>
-<p>See <a href="https://rmd-wordpress.eu/post-slug/">example post with math</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example">its source</a>.</p>
+<div class="section level3">
+<h3 id="math-with-mathjax">Math with MathJax<a class="anchor" aria-label="anchor" href="#math-with-mathjax"></a>
+</h3>
+<p>First, add <a href="https://maelle.github.io/goodpress/articles/setup.html#math-1">MathJax
+JS script to your website</a>, <strong>once</strong>.</p>
+<p>In every post where you want to use math, use <a href="https://docs.mathjax.org/en/latest/input/tex/index.html" class="external-link">MathJax
+input</a> (MathML, LaTeX). After formulas put a few empty lines.</p>
+<p>See <a href="https://rmd-wordpress.eu/post-slug/" class="external-link">example post with
+math</a> and <a href="https://github.com/maelle/goodpress/tree/main/inst/post-example" class="external-link">its
+source</a>.</p>
 </div>
-<div id="read-more-separator" class="section level3">
-<h3 class="hasAnchor">
-<a href="#read-more-separator" class="anchor"></a>Read more separator</h3>
-<p>You can add a <a href="https://wordpress.com/support/wordpress-editor/blocks/more-block/2/">More tag</a> for your post if you don’t want to show the whole post on your homepage. This can be done by adding a <code>`r goodpress::read_more()`</code> inline code wherever you want the More tag to appear in your <code>index.Rmd</code> post file.</p>
+<div class="section level3">
+<h3 id="read-more-separator">Read more separator<a class="anchor" aria-label="anchor" href="#read-more-separator"></a>
+</h3>
+<p>You can add a <a href="https://wordpress.com/support/wordpress-editor/blocks/more-block/2/" class="external-link">More
+tag</a> for your post if you don’t want to show the whole post on your
+homepage. This can be done by adding a
+<code>`r goodpress::read_more()`</code> inline code wherever you want
+the More tag to appear in your <code>index.Rmd</code> post file.</p>
 </div>
-<div id="technical-details" class="section level3">
-<h3 class="hasAnchor">
-<a href="#technical-details" class="anchor"></a>Technical details</h3>
+<div class="section level3">
+<h3 id="technical-details">Technical details<a class="anchor" aria-label="anchor" href="#technical-details"></a>
+</h3>
 <p>If you’re curious. 🙂</p>
-<p>The “one post per folder” thing is inspired by <a href="https://gohugo.io/content-management/page-bundles/">Hugo leaf bundles</a>.</p>
-<p>At the moment this package uses the very handy <a href="https://hugodown.r-lib.org/"><code>hugodown</code></a>’s R Markdown output format which allows using <code>downlit</code> for R syntax highlighting without my having to think too much.</p>
-<p>On disk your post is stored as index.Rmd and index.md, but before upload to the WordPress API it is transformed to HTML using <a href="https://pandoc.org/">Pandoc</a>.</p>
+<p>The “one post per folder” thing is inspired by <a href="https://gohugo.io/content-management/page-bundles/" class="external-link">Hugo leaf
+bundles</a>.</p>
+<p>At the moment this package uses the very handy <a href="https://hugodown.r-lib.org/" class="external-link"><code>hugodown</code></a>’s R
+Markdown output format which allows using <code>downlit</code> for R
+syntax highlighting without my having to think too much.</p>
+<p>On disk your post is stored as index.Rmd and index.md, but before
+upload to the WordPress API it is transformed to HTML using <a href="https://pandoc.org/" class="external-link">Pandoc</a>.</p>
 </div>
 </div>
-<div id="motivation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>The current best tool for writing from R Markdown to WordPress, <a href="https://tobiasdienlin.com/2019/03/08/how-to-publish-a-blog-post-on-wordpress-using-rmarkdown/"><code>knitr::knit2wp()</code></a>, relies on a package that hasn’t been updated in years and that depends on the no longer recommended <a href="https://frie.codes/curl-vs-rcurl/"><code>RCurl</code></a> and <code>XML</code>. In the meantime, WordPress gained a <a href="https://developer.wordpress.org/rest-api/">REST API</a> that to my knowledge isn’t wrapped in any <a href="https://github.com/jaredlander/wordpressr">working R package</a>.</p>
-<p>There is also the solution to <a href="https://github.com/mAAdhaTTah/wordpress-github-sync/">use a plug-in to sync a GitHub repo with a WordPress blog</a> (see <a href="https://abcdr.thinkr.fr/soumettre-un-article/">this website</a> and <a href="https://github.com/ThinkR-open/abcdR">its source</a>) but it doesn’t handle media. If you use a GitHub repo:</p>
+<div class="section level2">
+<h2 id="motivation">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
+<p>The current best tool for writing from R Markdown to WordPress, <a href="https://tobiasdienlin.com/2019/03/08/how-to-publish-a-blog-post-on-wordpress-using-rmarkdown/" class="external-link"><code>knitr::knit2wp()</code></a>,
+relies on a package that hasn’t been updated in years and that depends
+on the no longer recommended <a href="https://frie.codes/curl-vs-rcurl/" class="external-link"><code>RCurl</code></a> and
+<code>XML</code>. In the meantime, WordPress gained a <a href="https://developer.wordpress.org/rest-api/" class="external-link">REST API</a> that to my
+knowledge isn’t wrapped in any <a href="https://github.com/jaredlander/wordpressr" class="external-link">working R
+package</a>.</p>
+<p>There is also the solution to <a href="https://github.com/mAAdhaTTah/wordpress-github-sync/" class="external-link">use a
+plug-in to sync a GitHub repo with a WordPress blog</a> (see <a href="https://abcdr.thinkr.fr/soumettre-un-article/" class="external-link">this website</a>
+and <a href="https://github.com/ThinkR-open/abcdR" class="external-link">its source</a>) but
+it doesn’t handle media. If you use a GitHub repo:</p>
 <ul>
-<li>You could set up something like a GitHub Action workflow that’d interact with WordPress REST API each time you push to the default branch.</li>
-<li>Are you still sure you don’t want to use a <a href="https://gohugo.io/tools/migrations/">static website generator instead</a>? 😉 More seriously, I am interested in blogging workflows so feel free to tell me why and how you use WordPress (in an issue for instance).</li>
+<li>You could set up something like a GitHub Action workflow that’d
+interact with WordPress REST API each time you push to the default
+branch.</li>
+<li>Are you still sure you don’t want to use a <a href="https://gohugo.io/tools/migrations/" class="external-link">static website generator
+instead</a>? 😉 More seriously, I am interested in blogging workflows so
+feel free to tell me why and how you use WordPress (in an issue for
+instance).</li>
 </ul>
 </div>
   </div>
@@ -242,11 +308,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://masalmon.eu">Maëlle Salmon</a>, <a href="https://henrywang.nl">Henry Wang</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://masalmon.eu" class="external-link">Maëlle Salmon</a>, <a href="https://henrywang.nl" class="external-link">Henry Wang</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -254,6 +322,8 @@
 
   
 
+
+  
 
   </body>
 </html>

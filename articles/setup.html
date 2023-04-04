@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goodpress</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
@@ -49,14 +51,14 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/maelle/goodpress/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/maelle/goodpress/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="http://twitter.com/ma_salmon">
-    <span class="fab fa fab fa-twitter fa-lg"></span>
+  <a href="http://twitter.com/ma_salmon" class="external-link">
+    <span class="fab fa-twitter fa-lg"></span>
      
   </a>
 </li>
@@ -73,69 +75,93 @@
 
       
 
-      </header><script src="setup_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>WordPress Website Setup for goodpress</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/maelle/goodpress/blob/master/vignettes/setup.Rmd"><code>vignettes/setup.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/maelle/goodpress/blob/HEAD/vignettes/setup.Rmd" class="external-link"><code>vignettes/setup.Rmd</code></a></small>
       <div class="hidden name"><code>setup.Rmd</code></div>
 
     </div>
 
     
     
-<p>To be able to use goodpress to publish posts on your WordPress website, you need to perform a few setup steps. You only need to do these <em>once</em>, so that’s only potentially painful at setup.</p>
-<p>You might not need to tweak syntax highlighting and math stuff if you, well, never show code or never show math equations in your posts.</p>
-<div id="authentication" class="section level2">
-<h2 class="hasAnchor">
-<a href="#authentication" class="anchor"></a>Authentication</h2>
-<p>From WordPress point-of-view this package is a “remote application” therefore it needs your website to use an <a href="https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#authentication-plugins">authentication <em>plugin</em></a>. At the moment, for the sake of simplicity, this package only relies on <a href="https://wordpress.org/plugins/application-passwords/">Application Passwords</a>.</p>
-<p>You cannot install plugins if you use wordpress.com (unless you have a costly business plan there), therefore with wordpress.com you cannot use the REST API. There are paid services out there providing a domain name, hosting and a one-click WordPress install, for a few dollars a month, that you could use if you don’t roll your own server.</p>
-<p>Here’s what I did to be able to use this package on my <a href="https://rmd-wordpress.eu/">test website</a>:</p>
+<p>To be able to use goodpress to publish posts on your WordPress
+website, you need to perform a few setup steps. You only need to do
+these <em>once</em>, so that’s only potentially painful at setup.</p>
+<p>You might not need to tweak syntax highlighting and math stuff if
+you, well, never show code or never show math equations in your
+posts.</p>
+<div class="section level2">
+<h2 id="authentication">Authentication<a class="anchor" aria-label="anchor" href="#authentication"></a>
+</h2>
+<p>From the point-of-view of WordPress this package is a “remote
+application” that will need an application password to interact with
+your WordPress site through the <a href="https://developer.wordpress.org/rest-api/" class="external-link">REST API</a>.</p>
+<p>Here’s what I did to be able to use this package on my <a href="https://rmd-wordpress.eu/" class="external-link">test website</a>:</p>
 <ul>
-<li>Installed and activated the <a href="https://wordpress.org/plugins/application-passwords/">Application Passwords plugin</a>. <em>Don’t forget to keep your WordPress plugins up-to-date especially because of security updates.</em>
-</li>
-<li>Created a new user with editor rights, not admin, and from the admin panel I created an application password for “rmarkdown” for that user. <em>Doing this for an user with restricted access is safer.</em>
-</li>
-<li>In <a href="https://rstats.wtf/r-startup.html#renviron"><code>.Renviron</code></a>, save username as <code>WP_USER</code> and application password as <code>WP_PWD</code>. Re-start R. <em>Keep <code>.Renviron</code> safe, it contains secrets!</em> Here’s an example of .Renviron below, the empty line at the end of the file is needed.</li>
+<li><p>Created a new user with editor rights, not admin, and <a href="https://make.wordpress.org/core/2020/11/05/application-passwords-integration-guide/#Getting-Credentials" class="external-link">from
+the admin panel</a> I created an application password for “rmarkdown”
+for that user. <em>While you do not strictly need to create a new user
+to create an application password, doing this for an user with
+restricted access is safer.</em> <em>Note:</em> This setup has been
+tested up to WordPress 6.2 (self-hosted, i.e. wordpress.org). It may be
+possible to also use it on the centralised WordPress.com if you <a href="https://wordpress.com/support/third-party-applications/#sites-with-plugins-installed" class="external-link">follow
+these instructions</a> to generate an application password.</p></li>
+<li><p>In <a href="https://rstats.wtf/r-startup.html#renviron" class="external-link"><code>.Renviron</code></a>,
+save username as <code>WP_USER</code> and application password as
+<code>WP_PWD</code>. Re-start R. <em>Keep <code>.Renviron</code> safe,
+it contains secrets!</em> Here’s an example of .Renviron below, the
+empty line at the end of the file is needed.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="at">WP_PWD="your application password including space e.g. blabla blabla blabla blabla NOT your WordPress main password"</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="at">WP_USER="yourusername"</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">WP_PWD="your application password including space e.g. blabla blabla blabla blabla NOT your WordPress main password"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">WP_USER="yourusername"</span></span></code></pre></div>
 <ul>
-<li><p>Edited the <a href="https://github.com/georgestephanis/application-passwords/wiki/Basic-Authorization-Header----Missing">.htaccess file of my website</a>.</p></li>
-<li><p>If your website is using non-pretty permalinks (i.e. you have links à la <code>mywebsite.com/?p=42</code>, <a href="https://developer.wordpress.org/rest-api/key-concepts/#routes-endpoints">you’ll need to change that setting</a>). Pretty permalinks are better for SEO anyway. If that’s a problem for you, please open an issue.</p></li>
+<li>If your website is using non-pretty permalinks (i.e. you have links
+à la <code>mywebsite.com/?p=42</code>, <a href="https://developer.wordpress.org/rest-api/key-concepts/#routes-endpoints" class="external-link">you’ll
+need to change that setting</a>). Pretty permalinks are better for SEO
+anyway. If that’s a problem for you, please open an issue.</li>
 </ul>
 </div>
-<div id="syntax-highlighting" class="section level2">
-<h2 class="hasAnchor">
-<a href="#syntax-highlighting" class="anchor"></a>Syntax highlighting</h2>
-<div id="for-r" class="section level3">
-<h3 class="hasAnchor">
-<a href="#for-r" class="anchor"></a>For R</h3>
-<p>To get syntax highlighting for R blocks, at the moment you need to add custom CSS (once, like the plugin setup stuff).</p>
+<div class="section level2">
+<h2 id="syntax-highlighting">Syntax highlighting<a class="anchor" aria-label="anchor" href="#syntax-highlighting"></a>
+</h2>
+<div class="section level3">
+<h3 id="for-r">For R<a class="anchor" aria-label="anchor" href="#for-r"></a>
+</h3>
+<p>To get syntax highlighting for R blocks, at the moment you need to
+add custom CSS (once, like the plugin setup stuff).</p>
 <ul>
-<li>Find <code><a href="https://rdrr.io/r/base/system.file.html">system.file(file.path("css", "code.css"), package = "goodpress")</a></code> and copy it to your clipboard.</li>
-<li>From your WordPress admin dasbhoard, go to Appearance &gt; Customize &gt; Additional CSS. Paste the CSS there and click on publish.</li>
+<li>Find
+<code>system.file(file.path("css", "code.css"), package = "goodpress")</code>
+and copy it to your clipboard.</li>
+<li>From your WordPress admin dasbhoard, go to Appearance &gt; Customize
+&gt; Additional CSS. Paste the CSS there and click on publish.</li>
 </ul>
 <p>You could edit colors that are in the CSS file.</p>
-<p>Later I hope to make this process easier, maybe by adding inline styles.</p>
+<p>Later I hope to make this process easier, maybe by adding inline
+styles.</p>
 </div>
-<div id="other-languages" class="section level3">
-<h3 class="hasAnchor">
-<a href="#other-languages" class="anchor"></a>Other languages</h3>
+<div class="section level3">
+<h3 id="other-languages">Other languages<a class="anchor" aria-label="anchor" href="#other-languages"></a>
+</h3>
 <p>I haven’t explored that yet.</p>
 </div>
 </div>
-<div id="math" class="section level2">
-<h2 class="hasAnchor">
-<a href="#math" class="anchor"></a>Math</h2>
-<p>To be able to use math with MathJax, you’ll need to customize your theme.</p>
-<p>From WordPress interface go to Appearance &gt; Theme Editor. Add the lines below (that come from <a href="https://www.mathjax.org/#gettingstarted">MathJax docs</a>) to the <code>&lt;head&gt;</code> div of <code>header.php</code>, then save.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">&lt;script</span><span class="ot"> id=</span><span class="st">"MathJax-script"</span><span class="ot"> async src=</span><span class="st">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
-<p>Then refer to <a href="https://maelle.github.io/goodpress/articles/goodpress.html#math-with-mathjax">the usage vignette</a>.</p>
+<div class="section level2">
+<h2 id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
+</h2>
+<p>To be able to use math with MathJax, you’ll need to customize your
+theme.</p>
+<p>From WordPress interface go to Appearance &gt; Theme Editor. Add the
+lines below (that come from <a href="https://www.mathjax.org/#gettingstarted" class="external-link">MathJax docs</a>) to the
+<code>&lt;head&gt;</code> div of <code>header.php</code>, then save.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">id</span><span class="ot">=</span><span class="st">"MathJax-script"</span> <span class="er">async</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<p>Then refer to <a href="https://maelle.github.io/goodpress/articles/goodpress.html#math-with-mathjax">the
+usage vignette</a>.</p>
 </div>
   </div>
 
@@ -150,11 +176,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://masalmon.eu">Maëlle Salmon</a>, <a href="https://henrywang.nl">Henry Wang</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://masalmon.eu" class="external-link">Maëlle Salmon</a>, <a href="https://henrywang.nl" class="external-link">Henry Wang</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -162,6 +190,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -1,27 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://maelle.github.io/goodpress//index.html</loc>
+    <loc>https://maelle.github.io/goodpress/404.html</loc>
   </url>
   <url>
-    <loc>https://maelle.github.io/goodpress//reference/pipe.html</loc>
+    <loc>https://maelle.github.io/goodpress/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://maelle.github.io/goodpress//reference/read_more.html</loc>
+    <loc>https://maelle.github.io/goodpress/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://maelle.github.io/goodpress//reference/wp_categories.html</loc>
+    <loc>https://maelle.github.io/goodpress/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://maelle.github.io/goodpress//reference/wp_post.html</loc>
+    <loc>https://maelle.github.io/goodpress/articles/goodpress.html</loc>
   </url>
   <url>
-    <loc>https://maelle.github.io/goodpress//reference/wp_tags.html</loc>
+    <loc>https://maelle.github.io/goodpress/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://maelle.github.io/goodpress//articles/goodpress.html</loc>
+    <loc>https://maelle.github.io/goodpress/articles/setup.html</loc>
   </url>
   <url>
-    <loc>https://maelle.github.io/goodpress//articles/setup.html</loc>
+    <loc>https://maelle.github.io/goodpress/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/index.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/reference/read_more.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/reference/wp_categories.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/reference/wp_post.html</loc>
+  </url>
+  <url>
+    <loc>https://maelle.github.io/goodpress/reference/wp_tags.html</loc>
   </url>
 </urlset>
