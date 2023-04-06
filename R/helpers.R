@@ -70,7 +70,7 @@ wp_get_taxo <- function(taxo, wordpress_url) {
   )
 
   online_terms_df <- data.frame(
-    id = purrr::map_chr(online_terms, "id"),
+    id = purrr::map_chr(online_terms, ~as.character(.x[["id"]])),
     name = purrr::map_chr(online_terms, "name"),
     stringsAsFactors = FALSE
   )
