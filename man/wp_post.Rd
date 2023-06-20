@@ -23,7 +23,9 @@ URL to the post (invisibly)
 Post a post to Wordpress
 }
 \details{
-Several aspects of the post can be controlled by the YAML of index.Rmd.\if{html}{\out{<div class="yaml">}}\preformatted{---
+Several aspects of the post can be controlled by the YAML of index.Rmd.
+
+\if{html}{\out{<div class="sourceCode yaml">}}\preformatted{---
 title: "Title of the Post" # compulsory!
 date: "2020-04-01T00:00:00" # compulsory!
 author: "admin7891" # Either omit the field (the author will be

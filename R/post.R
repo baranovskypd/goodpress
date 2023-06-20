@@ -38,6 +38,9 @@
 #'   then from the WordPress interface make it visible with password. Make it private again
 #'   before trying to update the post with the R package.
 #'
+#' @importFrom hugodown md_document
+#' @importFrom knitr opts_chunk knit2wp include_graphics
+#'
 #' @return URL to the post (invisibly)
 #' @export
 #'
